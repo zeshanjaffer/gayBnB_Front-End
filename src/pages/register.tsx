@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaGoogle, FaTwitter, FaApple } from "react-icons/fa";
 
@@ -13,10 +15,13 @@ export default function Register() {
           style={{ backgroundImage: "url('/register.png')" }}
         >
           {/* Buttons Positioned Over Image */}
+          
           <div className="absolute top-4 right-4 flex gap-4">
+           <Link href="/login">
             <button className="w-[100px] h-[40px] border-2 border-[#CAA4EC] rounded-full font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#B88AE1] to-[#774C9E] transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#B88AE1] hover:to-[#774C9E] hover:text-white">
               Sign In
             </button>
+            </Link>
 
             <button
               className="w-[100px] h-[40px] border-2 rounded-full text-white font-semibold"

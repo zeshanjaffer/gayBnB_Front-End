@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGoogle, FaTwitter, FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
+import {
+  FaGoogle,
+  FaTwitter,
+  FaApple,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,7 +15,6 @@ export default function Login() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-[54.23px] shadow-lg overflow-hidden">
-        
         {/* Left Side - Image */}
         <div
           className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center relative"
@@ -29,15 +34,15 @@ export default function Login() {
             </button>
 
             <Link href="/register">
-  <button
-    className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
+              <button
+                className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
       bg-clip-text text-transparent bg-gradient-to-r from-[#B88AE1] to-[#774C9E] 
       transition-all duration-300 ease-in-out hover:bg-gradient-to-r 
       hover:from-[#B88AE1] hover:to-[#774C9E] hover:text-white"
-  >
-    Registration
-  </button>
-</Link>
+              >
+                Registration
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -79,7 +84,9 @@ export default function Login() {
               <label className="text-gray-500 flex items-center">
                 <input type="checkbox" className="mr-2" /> Remember me?
               </label>
-              <a href="#" className="text-[#EA4335]">Forgot Password?</a>
+              <a href="#" className="text-[#EA4335]">
+                Forgot Password?
+              </a>
             </div>
 
             {/* Sign In Button */}
