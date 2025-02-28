@@ -43,8 +43,8 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 text-white flex flex-col items-center space-y-4 py-4">
-          <Link href="/" className="text-lg" onClick={() => setIsOpen(false)}>LGBTQ+ HOTSPOTS</Link>
-          <Link href="/" className="text-lg" onClick={() => setIsOpen(false)}>GAYBNB YOUR PROPERTY</Link>
+          <Link href="/login" className="text-lg" onClick={() => setIsOpen(false)}>Login</Link>
+          <Link href="/register" className="text-lg" onClick={() => setIsOpen(false)}>Register</Link>
           <Link href="/" className="text-lg" onClick={() => setIsOpen(false)}>GAY STAYS</Link>
           <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] px-6 py-3 rounded-lg font-bold">
             Login
