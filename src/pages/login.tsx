@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGoogle, FaTwitter, FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -27,14 +28,16 @@ export default function Login() {
               Sign In
             </button>
 
-            <button
-              className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
-                bg-clip-text text-transparent bg-gradient-to-r from-[#B88AE1] to-[#774C9E] 
-                transition-all duration-300 ease-in-out hover:bg-gradient-to-r 
-                hover:from-[#B88AE1] hover:to-[#774C9E] hover:text-white"
-            >
-              Registration
-            </button>
+            <Link href="/register">
+  <button
+    className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
+      bg-clip-text text-transparent bg-gradient-to-r from-[#B88AE1] to-[#774C9E] 
+      transition-all duration-300 ease-in-out hover:bg-gradient-to-r 
+      hover:from-[#B88AE1] hover:to-[#774C9E] hover:text-white"
+  >
+    Registration
+  </button>
+</Link>
           </div>
         </div>
 
