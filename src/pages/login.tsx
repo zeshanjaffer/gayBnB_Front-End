@@ -7,17 +7,17 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-white p-4">
-      <div className="w-[1291px] h-[911px] flex rounded-[54.23px] shadow-lg overflow-hidden">
+      <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-[54.23px] shadow-lg overflow-hidden">
         
         {/* Left Side - Image */}
         <div
-          className="w-[693px] h-full bg-cover bg-center relative"
+          className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center relative"
           style={{ backgroundImage: "url('/loginimage.png')" }}
         >
           {/* Buttons Positioned Over Image */}
-          <div className="absolute top-6 right-6 flex gap-4">
+          <div className="absolute top-4 right-4 flex gap-2 md:gap-4">
             <button
-              className="w-[120px] h-[47px] border-2 rounded-full text-white font-semibold"
+              className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 rounded-full text-white font-semibold"
               style={{
                 borderColor: "#CAA4EC",
                 background:
@@ -28,7 +28,7 @@ export default function Login() {
             </button>
 
             <button
-              className="w-[120px] h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
+              className="w-24 h-10 md:w-[120px] md:h-[47px] border-2 border-[#CAA4EC] rounded-full font-semibold 
                 bg-clip-text text-transparent bg-gradient-to-r from-[#B88AE1] to-[#774C9E] 
                 transition-all duration-300 ease-in-out hover:bg-gradient-to-r 
                 hover:from-[#B88AE1] hover:to-[#774C9E] hover:text-white"
@@ -39,11 +39,11 @@ export default function Login() {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="flex flex-col justify-center px-16 w-[515px] h-[657px]">
-          <h2 className="font-bold text-[35.88px] leading-[47.58px]">
+        <div className="flex flex-col justify-center px-6 md:px-16 py-8 w-full md:w-1/2">
+          <h2 className="font-bold text-2xl md:text-[35.88px] leading-tight md:leading-[47.58px]">
             Sign in to your Account
           </h2>
-          <p className="text-gray-500 mt-2 text-[20px] font-normal">
+          <p className="text-gray-500 mt-2 text-base md:text-[20px] font-normal">
             Sign in to continue your journey with us.
           </p>
 
@@ -100,35 +100,34 @@ export default function Login() {
             </div>
 
             {/* Social Login Buttons */}
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-4 md:gap-6">
               <a
                 href="/auth/google"
-                className="flex items-center justify-center w-[55.37px] h-[55.37px] rounded-[16.49px] bg-white shadow-lg"
+                className="flex items-center justify-center w-12 md:w-[55.37px] h-12 md:h-[55.37px] rounded-lg bg-white shadow-lg"
               >
-                <div className="flex items-center justify-center w-[35.35px] h-[35.35px] rounded-full bg-red-600">
+                <div className="flex items-center justify-center w-9 md:w-[35.35px] h-9 md:h-[35.35px] rounded-full bg-red-600">
                   <FaGoogle className="text-white text-lg" />
                 </div>
               </a>
 
               <a
                 href="/auth/twitter"
-                className="flex items-center justify-center w-[55.37px] h-[55.37px] rounded-[16.49px] bg-white shadow-lg"
+                className="flex items-center justify-center w-12 md:w-[55.37px] h-12 md:h-[55.37px] rounded-lg bg-white shadow-lg"
               >
-                <div className="flex items-center justify-center w-[35.35px] h-[35.35px] rounded-full bg-blue-500">
+                <div className="flex items-center justify-center w-9 md:w-[35.35px] h-9 md:h-[35.35px] rounded-full bg-blue-500">
                   <FaTwitter className="text-white text-lg" />
                 </div>
               </a>
 
               <a
                 href="/auth/apple"
-                className="flex items-center justify-center w-[55.37px] h-[55.37px] rounded-[16.49px] bg-white shadow-lg"
+                className="flex items-center justify-center w-12 md:w-[55.37px] h-12 md:h-[55.37px] rounded-lg bg-white shadow-lg"
               >
-                <div className="flex items-center justify-center w-[35.35px] h-[35.35px] rounded-full bg-black">
+                <div className="flex items-center justify-center w-9 md:w-[35.35px] h-9 md:h-[35.35px] rounded-full bg-black">
                   <FaApple className="text-white text-lg" />
                 </div>
               </a>
             </div>
-
           </div>
         </div>
       </div>
