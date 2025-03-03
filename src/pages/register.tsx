@@ -46,41 +46,21 @@ export default function Register() {
           <div className="mt-6">
             {/* User Type Dropdown */}
             <div className="w-full">
-              <div className="flex items-center w-full p-3 rounded-md focus:outline-none bg-[#F9FAFB] pr-10">
-                <select className="bg-transparent focus:outline-none text-gray-700">
-                  <option value="miss">Miss</option>
-                  <option value="mr">Mr.</option>
-                  <option value="mrs">Mrs.</option>
-                </select>
-                <span className="mx-2 text-gray-400">|</span>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full bg-transparent focus:outline-none text-gray-700"
-                />
-              </div>
+            <input
+              type="first name"
+              placeholder="First Name"
+              className="w-full p-3 mt-4 rounded-md focus:outline-none bg-[#F9FAFB] pr-10 text-gray-700"
+            />
             </div>
 
-            {/* User Type Selection */}
-            <select
+            <input
+              type="Last Name"
+              placeholder="Last Name"
               className="w-full p-3 mt-4 rounded-md focus:outline-none bg-[#F9FAFB] pr-10 text-gray-700"
-              defaultValue=""
-            >
-              <option value="" disabled>User Type</option>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
+            />
+           
 
-            {/* Gender Selection */}
-            <select
-              className="w-full p-3 mt-4 rounded-md focus:outline-none bg-[#F9FAFB] pr-10 text-gray-700"
-              defaultValue=""
-            >
-              <option value="" disabled>Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
+           
 
             {/* Email Input */}
             <input

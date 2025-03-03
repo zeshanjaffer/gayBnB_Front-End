@@ -9,7 +9,7 @@ export default function ForgetPassword() {
       <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-[30px] shadow-lg overflow-hidden bg-white relative">
         
         {/* Left Side - Image */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 h-[350px] md:h-auto bg-cover bg-center relative">
           <img
             src="/register.png"
             alt="Forget Password"
