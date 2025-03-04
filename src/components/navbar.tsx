@@ -25,6 +25,8 @@ const Navbar = () => {
           <Link href="/login" className="text-white text-lg font-semibold">Login</Link>
           <Link href="/register" className="text-white text-lg font-semibold">Register</Link>
           <Link href="/forgetpassword" className="text-white text-lg font-semibold">ForgetPassword</Link>
+          <Link href="/dashboard" className="text-white text-lg font-semibold">Dashboard</Link>
+          
         </div>
 
         {/* Login Button (Desktop) */}
@@ -45,7 +47,9 @@ const Navbar = () => {
         <div className="md:hidden bg-gray-800 text-white flex flex-col items-center space-y-4 py-4">
           <Link href="/login" className="text-lg" onClick={() => setIsOpen(false)}>Login</Link>
           <Link href="/register" className="text-lg" onClick={() => setIsOpen(false)}>Register</Link>
-          <Link href="/forgetpassword" className="text-lg" onClick={() => setIsOpen(false)}>ForgetPassword</Link>
+          <Link href="/dashboard" className="text-lg" onClick={() => setIsOpen(false)}>Dashboard</Link>
+          
+
           <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] px-6 py-3 rounded-lg font-bold">
             Login
           </button>
