@@ -24,7 +24,7 @@ const Topbar = () => {
         {/* Avatar */}
         <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
           <img
-            src="/profile.jpg"
+            src="/avatar.png"
             alt="User Avatar"
             className="w-full h-full object-cover"
           />
