@@ -15,14 +15,14 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
   { name: "Dashboard", path: "/dashboard", icon: HomeIcon }, // Home icon for Dashboard
-  { name: "Chat", path: "/chat", icon: ChatBubbleLeftIcon }, // Chat icon for messaging
+  { name: "Chat", path: "/dashboard/chatpage", icon: ChatBubbleLeftIcon }, // Chat icon for messaging
   { name: "Listing", path: "/dashboard/listing", icon: ClipboardDocumentListIcon }, // Document icon for listings
   { name: "Booking", path: "/dashboard/booking", icon: CalendarIcon }, // Calendar icon for booking
   { name: "Trips", path: "/dashboard/trips", icon: MapPinIcon }, // Map pin icon for trips
   { name: "Places", path: "/dashboard/places", icon: MapPinIcon }, // Same map pin for places
   { name: "Payouts", path: "/dashboard/payouts", icon: BanknotesIcon }, // Banknotes icon for payouts
   { name: "Transactions", path: "/dashboard/transactions", icon: CreditCardIcon }, // Credit card icon for transactions
-  { name: "Travel Buddy", path: "/dashboard/travel-buddy", icon: UsersIcon }, // Users icon for Travel Buddy
+  { name: "Reviews", path: "/dashboard/reviews", icon: UsersIcon }, // Users icon for Travel Buddy
   { name: "Profile", path: "/dashboard/profile", icon: UserCircleIcon }, // Profile icon for user
 ];
 
@@ -42,7 +42,7 @@ export default function Sidebar() {
       </button>
 
       {/* Sidebar */}
-      <div className={`fixed md:relative top-0 left-0 h-full w-72 md:w-64 bg-white shadow-lg transition-transform duration-300 z-40 
+      <div className={`fixed md:relative top-0 left-0 h-full w-[301px] bg-white shadow-lg transition-transform duration-300 z-40 
         ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"} rounded-r-xl overflow-y-auto`}
       >
         {/* Logo */}

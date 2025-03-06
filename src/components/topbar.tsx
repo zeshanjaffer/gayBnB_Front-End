@@ -17,7 +17,7 @@ const Topbar = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-[300] w-[1139px] h-[120px] bg-white shadow-md z-50 flex items-center px-8">
+    <div className="fixed top-0  w-[1139px] h-[120px] bg-white  z-50 flex items-center px-8">
       <div className="w-[1062.316px] h-[54px] flex items-center justify-between mx-auto">
         {/* Search Bar */}
         <div className="flex items-center bg-[#F5F5F5] rounded-full px-4 w-[361px] h-[53px]">
