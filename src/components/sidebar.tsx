@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { Power } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { 
-  HomeIcon, ChatBubbleLeftIcon, ListBulletIcon, CalendarIcon, 
-  UserCircleIcon, BanknotesIcon, CreditCardIcon, UsersIcon, 
-  MapPinIcon, ClipboardDocumentListIcon, PowerIcon
+  HomeIcon, ChatBubbleLeftIcon, ClipboardDocumentListIcon, CalendarIcon, 
+  UserCircleIcon, BanknotesIcon, CreditCardIcon, UsersIcon, MapPinIcon 
 } from "@heroicons/react/24/outline";
 
 type MenuItem = {  
@@ -36,7 +35,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 
   return (
     <>
-      {/* Overlay to close sidebar on mobile */}
+      {/* Overlay for mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -44,12 +43,28 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         />
       )}
 
-      {/* Sidebar Below Topbar */}
+      {/* Sidebar */}
       <div 
-        className={`fixed md:relative top-[60px] left-0 h-[calc(100vh-60px)] w-[270px] bg-white shadow-lg transition-transform duration-300 z-40 
-        ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"} overflow-y-auto`}
+        className={`fixed md:relative bg-white shadow-lg transition-transform duration-300 z-40 overflow-y-auto
+        ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
+        style={{
+          width: "300px",
+          height: "687.01171875px",
+          left: "1px",
+          gap: "8px",
+          top: "153px", // Default for desktop
+        }}
       >
-        {/* Navigation Links */}
+        {/* Responsive Top Adjustment */}
+        <style>
+          {`
+            @media (max-width: 768px) {
+              div[style] { top: 77px !important; } /* Remove top gap in mobile */
+            }
+          `}
+        </style>
+
+        {/* Navigation */}
         <nav className="mt-8 space-y-2 px-4">
           {menuItems.map((item) => (
             <Link key={item.name} href={item.path} passHref>
@@ -58,7 +73,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
                   ${router.pathname === item.path 
                     ? "bg-purple-200 text-purple-700 shadow-md" 
                     : "text-gray-600 hover:bg-gray-100"}`}
-                onClick={toggleSidebar} // Close sidebar on mobile click
+                onClick={toggleSidebar}
               >
                 <item.icon className="w-6 h-6 mr-3" />
                 <span>{item.name}</span>
@@ -70,13 +85,13 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         {/* Logout Button */}
         <div className="flex justify-center py-6">
           <button
-            className="w-20 h-20 rounded-full flex items-center justify-center text-white shadow-md"
-            style={{
-              background: "radial-gradient(89.6% 68.47% at 0% 0.99%, #B88AE1 0%, #774C9E 100%)",
-            }}
-            aria-label="Logout"
+            className="w-[102px] h-[102px] rounded-[20.4px] flex flex-col items-center justify-center 
+            bg-gradient-to-br from-[#B88AE1] to-[#774C9E] shadow-md text-white"
           >
-            <PowerIcon className="w-8 h-8" />
+            <Power size={30} />
+            <span className="font-ABeeZee text-[14px] leading-[100%] tracking-[0px] text-center">
+              Logout
+            </span>
           </button>
         </div>
       </div>
