@@ -76,7 +76,7 @@ export default function Topbar({ toggleSidebar }: TopbarProps) {
 
           {/* User Profile Image */}
           <Image
-            src="/user-avatar.jpg"
+            src="icons/avatar.svg"
             alt="User"
             width={40}
             height={40}
