@@ -10,11 +10,7 @@ export default function Home() {
   const [showRings, setShowRings] = useState<boolean>(false); // State to control ring visibility
 
   // Function to change the hero image and description
-  const handleImageClick = (
-    newImage: string,
-    newDescription: string,
-    buttonIndex: number
-  ) => {
+  const handleImageClick = (newImage: string, newDescription: string, buttonIndex: number) => {
     setHeroImage(newImage);
     setDescription(newDescription);
     setSelectedButton(buttonIndex); // Set the selected button index
@@ -28,7 +24,7 @@ export default function Home() {
         className="w-full h-full bg-cover bg-center transition-all duration-500"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        {/* Adventure Text */}
+        {/* Dynamic Text Based on Selected Page */}
         <h1
           className="absolute top-[222px] left-[32px] text-[135px] font-extrabold tracking-wider leading-[124%]"
           style={{
@@ -39,100 +35,53 @@ export default function Home() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Adventure
+          {selectedButton === 0 && "Adventure"}
+          {selectedButton === 1 && "Life is a journey"}
+          {selectedButton === 2 && "Love to travel"}
         </h1>
 
         {/* Right Side Buttons */}
         <div className="absolute top-[395px] right-[50px] flex flex-col gap-4">
           {/* First Button - Default */}
           <button
-            onMouseEnter={() =>
-              setDescription(
-                "Find the best destinations, tips, and experiences to make your travels seamless and memorable."
-              )
-            }
+            onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
             onMouseLeave={() => setDescription("")}
-            onClick={() =>
-              handleImageClick(
-                "/heroimage1.jpg",
-                "Find the best destinations, tips, and experiences to make your travels seamless and memorable.",
-                0
-              )
-            } // Pass button index 0
+            onClick={() => handleImageClick("/heroimage1.jpg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
             className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 0
-                ? "w-[124.34630584716797px] h-[124.34630584716797px]"
-                : "w-[78px] h-[78px]"
+              selectedButton === 0 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
             }`}
           >
-            <Image
-              src="/heroimage1.jpg"
-              alt="Destination 1"
-              width={selectedButton === 0 ? 124 : 78}
-              height={selectedButton === 0 ? 124 : 78}
-              className="rounded-full"
-            />
+            <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full" />
           </button>
 
-          {/* Other Buttons */}
+          {/* Second Button */}
           <button
-            onMouseEnter={() =>
-              setDescription("Discover hidden gems and local secrets.")
-            }
+            onMouseEnter={() => setDescription("Discover hidden gems and local secrets.")}
             onMouseLeave={() => setDescription("")}
-            onClick={() =>
-              handleImageClick(
-                "/heroimage1.jpg",
-                "Discover hidden gems and local secrets.",
-                1
-              )
-            } // Pass button index 1
+            onClick={() => handleImageClick("/heroimage2.jpg", "Discover hidden gems and local secrets.", 1)}
             className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 1
-                ? "w-[124.34630584716797px] h-[124.34630584716797px]"
-                : "w-[78px] h-[78px]"
+              selectedButton === 1 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
             }`}
           >
-            <Image
-              src="/heroimage1.jpg"
-              alt="Destination 2"
-              width={selectedButton === 1 ? 124 : 78}
-              height={selectedButton === 1 ? 124 : 78}
-              className="rounded-full"
-            />
+            <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full" />
           </button>
 
+          {/* Third Button */}
           <button
-            onMouseEnter={() =>
-              setDescription("Experience unique adventures and create lasting memories.")
-            }
+            onMouseEnter={() => setDescription("Experience unique adventures and create lasting memories.")}
             onMouseLeave={() => setDescription("")}
-            onClick={() =>
-              handleImageClick(
-                "/heroimage1.jpg",
-                "Experience unique adventures and create lasting memories.",
-                2
-              )
-            } // Pass button index 2
+            onClick={() => handleImageClick("/heroimage3.jpg", "Experience unique adventures and create lasting memories.", 2)}
             className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 2
-                ? "w-[124.34630584716797px] h-[124.34630584716797px]"
-                : "w-[78px] h-[78px]"
+              selectedButton === 2 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
             }`}
           >
-            <Image
-              src="/heroimage1.jpg"
-              alt="Destination 3"
-              width={selectedButton === 2 ? 124 : 78}
-              height={selectedButton === 2 ? 124 : 78}
-              className="rounded-full"
-            />
+            <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full" />
           </button>
         </div>
 
         {/* Description Text */}
         {description && (
-          <div className="absolute top-[395px] left-[826px] w-[398.5433349609375px] h-[104px] transition-opacity duration-300 ease-in-out">
+          <div className="absolute top-[395px] left-[826px] w-[398px] h-[104px] transition-opacity duration-300 ease-in-out">
             <p className="text-white">{description}</p>
           </div>
         )}
@@ -140,19 +89,19 @@ export default function Home() {
         {/* Rings */}
         <Ring
           isVisible={showRings}
-          width={408.30718994140625}
-          height={408.30718994140625}
-          top={242.84}
-          left={1097.69}
+          width={408}
+          height={408}
+          top={242}
+          left={1097}
           borderWidth={1.26}
           borderColor="rgba(255, 255, 255, 0.4)" // #FFFFFF66 with 40% opacity
         />
         <Ring
           isVisible={showRings}
-          width={408.30718994140625 * 0.5} // Half the size for the inner ring
-          height={408.30718994140625 * 0.5}
-          top={242.84 + 408.30718994140625 * 0.25} // Adjust position for inner ring
-          left={1097.69 + 408.30718994140625 * 0.25}
+          width={204} // Half the size for the inner ring
+          height={204}
+          top={242 + 102} // Adjust position for inner ring
+          left={1097 + 102}
           borderWidth={1.26}
           borderColor="rgba(255, 255, 255, 0.4)" // #FFFFFF66 with 40% opacity
         />
