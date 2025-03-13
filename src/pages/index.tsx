@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Ring from './ring'; // Import the Ring component
+import Banner from '@/components/banner1';
+import Banner_2 from '@/components/banner2';
 
 export default function Home() {
   // Initial hero image
@@ -18,6 +20,7 @@ export default function Home() {
   };
 
   return (
+    <>
     <div className="relative w-[1443px] h-[828px] mx-auto">
       {/* Hero Section */}
       <div
@@ -105,7 +108,13 @@ export default function Home() {
           borderWidth={1.26}
           borderColor="rgba(255, 255, 255, 0.4)" // #FFFFFF66 with 40% opacity
         />
+        
       </div>
+      
     </div>
+    <Banner/>
+    <Banner_2/>
+    </>
+    
   );
 }
