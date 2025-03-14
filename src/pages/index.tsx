@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Ring from './ring'; // Import the Ring component
 import Banner from '@/components/banner1';
 import Banner_2 from '@/components/banner2';
+import SearchPortal from '@/components/search_portal';
+import Banner_3 from '@/components/banner3';
 
 export default function Home() {
   // Initial hero image
@@ -21,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="relative w-[1443px] h-[828px] mx-auto">
+    <div className="relative h-[828px] mx-auto">
       {/* Hero Section */}
       <div
         className="w-full h-full bg-cover bg-center transition-all duration-500"
@@ -112,8 +114,10 @@ export default function Home() {
       </div>
       
     </div>
+    <SearchPortal/>
     <Banner/>
     <Banner_2/>
+    <Banner_3/>
     </>
     
   );
