@@ -5,7 +5,7 @@ import { FaGoogle, FaTwitter, FaApple } from "react-icons/fa";
 
 export default function Register() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white p-4">
+    <div className="mt-[150px]  flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-[30px] shadow-lg overflow-hidden bg-white">
         {/* Left Side - Image */}
         <div

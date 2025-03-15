@@ -3,53 +3,53 @@ import Image from 'next/image';
 
 const Banner_3 = () => {
   return (
-    <div className="flex w-[1238.73px] h-[421px] rounded-[40px] mx-auto my-12">
-      {/* Left Side Images Section */}
-      <div className="w-[580px] h-full rounded-l-[40px] overflow-hidden relative grid grid-cols-2 grid-rows-2">
-        {/* Top Left Image */}
-        <div className="relative">
-          <Image
-            src="/banner3.1.png"
-            alt="Banner Image 1"
-            layout="fill"
-            objectFit="cover"
-          />
+    <div className="mt-[120px] mx-auto my-12 w-[1238.73px]  h-[421px] " >
+      <div className="w-[1238.73px]   h-[421px] rounded-[40px] flex"> {/* Main container with specified dimensions */}
+        {/* Left Side Images Section */}
+        <div className="w-[580px] rounded-l-[40px] overflow-hidden relative grid grid-cols-2 grid-rows-2">
+          {/* Top Left Image */}
+          <div className="relative">
+            <Image
+              src="/banner3.1.png"
+              alt="Banner Image 1"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+
+          {/* Top Right Image */}
+          <div className="relative">
+            <Image
+              src="/banner3,2.png"
+              alt="Banner Image 2"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+
+          {/* Bottom Left Image */}
+          <div className="relative">
+            <Image
+              src="/banner3.3.png"
+              alt="Banner Image 3"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+
+          {/* Bottom Right Image */}
+          <div className="relative">
+            <Image
+              src="/banner3.4.png"
+              alt="Banner Image 4"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
 
-        {/* Top Right Image */}
-        <div className="relative">
-          <Image
-            src="/banner3,2.png"
-            alt="Banner Image 2"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-
-        {/* Bottom Left Image */}
-        <div className="relative">
-          <Image
-            src="/banner3.3.png"
-            alt="Banner Image 3"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-
-        {/* Bottom Right Image */}
-        <div className="relative">
-          <Image
-            src="/banner3.4.png"
-            alt="Banner Image 4"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      </div>
-
-      {/* Right Side Content Section */}
-      <div className="w-[610.73px] h-[410.83px] p-8 flex flex-col justify-center">
-        <div className="flex flex-col"> {/* Added a container div */}
+        {/* Right Side Content Section */}
+        <div className="w-[610.73px] p-8 flex flex-col justify-center">
           <span className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[50px] px-4 py-2 text-sm font-bold self-start mb-2">
             TRAVEL BUDDY
           </span>

@@ -13,7 +13,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white p-4">
+    <div className="mt-[120px]  flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-[54.23px] shadow-lg overflow-hidden">
         {/* Left Side - Image */}
         <div

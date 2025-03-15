@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Banner_2 = () => {
   return (
-    <div className="bg-[#F1F8FF] w-full max-w-[1440px] h-[776.07px] relative mx-auto flex items-center justify-between px-10 md:px-20">
+    <div className="mt-[100px]  bg-[#F1F8FF] w-full max-w-[1440px] h-[776.07px] relative mx-auto flex items-center justify-between px-10 md:px-20">
       {/* Left Text Section */}
       <div className="max-w-[550px]">
         <div className="bg-[#774C9E] text-white px-4 py-2 rounded-full inline-block mb-6">
