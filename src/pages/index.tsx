@@ -7,6 +7,8 @@ import SearchPortal from '@/components/search_portal';
 import Banner_3 from '@/components/banner3';
 import Inclusivity from '@/components/Inclusivity';
 import SliderComponent from '@/components/slider_component';
+import Partners from '@/components/partners';
+import Newsletter from '@/components/newsletter';
 
 export default function Home() {
   // Initial hero image
@@ -122,6 +124,8 @@ export default function Home() {
     <Banner/>
     <Banner_2/>
     <Banner_3/>
+    <Partners/>
+    <Newsletter/>
    
     </>
     

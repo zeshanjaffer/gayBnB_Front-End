@@ -1,79 +1,63 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Banner_3 = () => {
   return (
-    <div className="mt-[120px] mx-auto my-12 w-[1238.73px]  h-[421px] " >
-      <div className="w-[1238.73px]   h-[421px] rounded-[40px] flex"> {/* Main container with specified dimensions */}
-        {/* Left Side Images Section */}
-        <div className="w-[580px] rounded-l-[40px] overflow-hidden relative grid grid-cols-2 grid-rows-2">
-          {/* Top Left Image */}
-          <div className="relative">
-            <Image
-              src="/banner3.1.png"
-              alt="Banner Image 1"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-
-          {/* Top Right Image */}
-          <div className="relative">
-            <Image
-              src="/banner3,2.png"
-              alt="Banner Image 2"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-
-          {/* Bottom Left Image */}
-          <div className="relative">
-            <Image
-              src="/banner3.3.png"
-              alt="Banner Image 3"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-
-          {/* Bottom Right Image */}
-          <div className="relative">
-            <Image
-              src="/banner3.4.png"
-              alt="Banner Image 4"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+    <div className="mt-[120px] mx-auto w-[1238.73px] h-[421px] flex rounded-[40px] overflow-hidden">
+      {/* Left Side Images Section */}
+      <div className="w-[580px] h-full grid grid-cols-2 grid-rows-2 gap-[5px] rounded-l-[40px] overflow-hidden">
+        {/* Image 1 */}
+        <div className="w-[293px] h-[216px] relative">
+          <Image src="/banner3.1.png" alt="Banner Image 1" layout="fill" objectFit="cover" className="rounded-[40px]" />
         </div>
 
-        {/* Right Side Content Section */}
-        <div className="w-[610.73px] p-8 flex flex-col justify-center">
-          <span className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[50px] px-4 py-2 text-sm font-bold self-start mb-2">
-            TRAVEL BUDDY
-          </span>
-          <h2 className="font-satoshi font-bold text-[65px] leading-[75px] mb-4">
-            Join the Adventure
-          </h2>
-          <p className="font-satoshi text-base leading-7 mb-4">
-            Find Your Ideal Gaybnb Travel Buddy Today!
-            <br />
-            Connecting with fellow travelers on Gaybnb Travel Buddy is simple and rewarding. Our user-friendly platform allows you to create a profile showcasing your travel interests, preferred destinations, and availability. Browse through a diverse community of LGBTQ+ travelers looking for companionship and shared experiences.
-          </p>
+        {/* Image 2 */}
+        <div className="w-[293px] h-[216px] relative">
+          <Image src="/banner3,2.png" alt="Banner Image 2" layout="fill" objectFit="cover" className="rounded-[40px]" />
+        </div>
 
-          <a href="#" className="text-[#9642F8] font-bold mb-8">
-            Read More
-          </a>
+        {/* Image 3 */}
+        <div className="w-[222px] h-[186px] relative">
+          <Image src="/banner3.3.png" alt="Banner Image 3" layout="fill" objectFit="cover" className="rounded-[40px]" />
+        </div>
 
-          <div className="flex space-x-4">
-            <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[50px] px-[50px] py-[16px] font-bold">
-              Join Now
-            </button>
-            <button className="border border-black text-black rounded-[50px] px-[50px] py-[16px] font-bold">
-              Learn More
-            </button>
-          </div>
+        {/* Image 4 */}
+        <div className="w-[378px] h-[186px] relative">
+          <Image src="/banner3.4.png" alt="Banner Image 4" layout="fill" objectFit="cover" className="rounded-[40px]" />
+        </div>
+      </div>
+
+      {/* Right Side Content Section */}
+      <div className="w-[610.73px] h-[410.83px] flex flex-col justify-center p-8 bg-white rounded-r-[40px]">
+        {/* Travel Buddy Tag */}
+        <span className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[40px] px-[32px] py-[7px] text-sm font-bold self-start mb-2">
+          TRAVEL BUDDY
+        </span>
+
+        {/* Heading */}
+        <h2 className="font-satoshi font-bold text-[45px] leading-[55px] text-gray-900 mb-4">
+          Join the Adventure
+        </h2>
+
+        {/* Description */}
+        <p className="font-satoshi text-lg text-gray-700 leading-7 mb-4">
+          Find Your Ideal Gaybnb Travel Buddy Today! <br />
+          Connecting with fellow travelers on Gaybnb Travel Buddy is simple and rewarding. Our user-friendly platform allows you to create a profile showcasing your travel interests, preferred destinations, and availability. Browse through a diverse community of LGBTQ+ travelers looking for companionship and shared experiences.
+        </p>
+
+        {/* Read More Link */}
+        <a href="#" className="text-[#9642F8] font-bold underline mb-6">
+          Read More
+        </a>
+
+        {/* Buttons */}
+        <div className="flex space-x-4">
+          <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[40px] px-[50px] py-[12px] font-bold text-lg shadow-md hover:shadow-lg transition">
+            Join Now
+          </button>
+          <button className="border border-black text-black rounded-[40px] px-[50px] py-[12px] font-bold text-lg hover:bg-gray-100 transition">
+            Learn More
+          </button>
         </div>
       </div>
     </div>
