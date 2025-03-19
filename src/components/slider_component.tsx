@@ -34,13 +34,14 @@ const SliderComponent = () => {
 
   return (
     <>
-      <div 
-       className="  swiper swiper-carousel swiper-horizontal swiper-watch-progress">
+      <div
+        className="swiper swiper-carousel swiper-horizontal swiper-watch-progress"
+      >
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/dr-strange.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -58,7 +59,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/thor-ragnarok.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -75,7 +76,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/dr-strange.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -92,7 +93,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/eternals.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -110,7 +111,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/guardians-of-the-galaxy.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -126,7 +127,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/justice-league.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -144,7 +145,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/spider-man.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -161,7 +162,7 @@ const SliderComponent = () => {
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
               <img
-                src="https://carousel-slider.uiinitiative.com/images/suicide-squad.jpg"
+                src="/register.png"
                 alt=""
               />
               <div className="slide-content">
@@ -176,8 +177,6 @@ const SliderComponent = () => {
             </div>
           </div>
         </div>
-
-       
       </div>
     </>
   );
