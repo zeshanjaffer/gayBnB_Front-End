@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Ring from './ring'; // Import the Ring component
 import Banner from '@/components/banner1';
 import Banner_2 from '@/components/banner2';
 import SearchPortal from '@/components/search_portal';
@@ -88,32 +87,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Description Text */}
-        {description && (
-          <div className="absolute top-[395px] left-[826px] w-[398px] h-[104px] transition-opacity duration-300 ease-in-out">
-            <p className="text-white">{description}</p>
-          </div>
-        )}
-
-        {/* Rings */}
-        <Ring
-          isVisible={showRings}
-          width={408}
-          height={408}
-          top={242}
-          left={1097}
-          borderWidth={1.26}
-          borderColor="rgba(255, 255, 255, 0.4)" // #FFFFFF66 with 40% opacity
-        />
-        <Ring
-          isVisible={showRings}
-          width={204} // Half the size for the inner ring
-          height={204}
-          top={242 + 102} // Adjust position for inner ring
-          left={1097 + 102}
-          borderWidth={1.26}
-          borderColor="rgba(255, 255, 255, 0.4)" // #FFFFFF66 with 40% opacity
-        />
         
       </div>
       

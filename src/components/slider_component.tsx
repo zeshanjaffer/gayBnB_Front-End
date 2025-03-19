@@ -34,7 +34,8 @@ const SliderComponent = () => {
 
   return (
     <>
-      <div className="swiper swiper-carousel swiper-horizontal swiper-watch-progress">
+      <div 
+       className="  swiper swiper-carousel swiper-horizontal swiper-watch-progress">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <div className="swiper-carousel-animate-opacity">
