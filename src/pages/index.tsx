@@ -8,6 +8,7 @@ import Inclusivity from '@/components/Inclusivity';
 import SliderComponent from '@/components/slider_component';
 import Partners from '@/components/partners';
 import Newsletter from '@/components/newsletter';
+import PlacesSlider from '@/components/places_slider';
 
 export default function Home() {
   // Initial hero image
@@ -98,6 +99,7 @@ export default function Home() {
     <Banner_2/>
     <Banner_3/>
     <Partners/>
+    <PlacesSlider/>
     <Newsletter/>
    
     </>
