@@ -1,129 +1,64 @@
-import React, { useEffect } from 'react';
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-const PlacesSlider: React.FC = () => {
-  useEffect(() => {
-    new Swiper('.swiper-container', {
-      loop: true,
-      slidesPerView: 1,
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      },
-      spaceBetween: 24,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }, []);
+const sliderData = [
+  { src: "/register.png", label: "North America" },
+  { src: "/register.png", label: "Europe" },
+  { src: "/register.png", label: "Latin America" },
+  { src: "/register.png", label: "Latin America" },
+  { src: "/register.png", label: "Latin America" },
+];
 
+const PlacesSlider = () => {
   return (
-    <div className="bg-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider">
-            Over 15 Million
-          </p>
-          <h2 className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            All City Guides
-          </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-base text-gray-500 sm:mt-5 sm:max-w-xl sm:mx-auto md:text-lg">
-            Discover LGBTQ+ Hotspots around the world
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center" aria-hidden="true">
-              <div className="w-full border-t border-gray-300"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-3 text-lg font-medium text-gray-900">
-                North America
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-6 relative swiper-container">
-            <div className="swiper-wrapper">
-              <div className="swiper-slide">
-                <div className="group relative">
-                  <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                    <img
-                      src="/heroimage3.jpg"
-                      alt="North America"
-                      className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h3 className="text-sm text-gray-700">
-                        <a href="#">
-                          <span aria-hidden="true" className="absolute inset-0"></span>
-                          North America
-                        </a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="swiper-slide">
-                <div className="group relative">
-                  <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                    <img
-                      src="/heroimage2.jpg"
-                      alt="Europe"
-                      className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h3 className="text-sm text-gray-700">
-                        <a href="#">
-                          <span aria-hidden="true" className="absolute inset-0"></span>
-                          Europe
-                        </a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="swiper-slide">
-                <div className="group relative">
-                  <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                    <img
-                      src="/heroimage1.jpg"
-                      alt="Latin America"
-                      className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h3 className="text-sm text-gray-700">
-                        <a href="#">
-                          <span aria-hidden="true" className="absolute inset-0"></span>
-                          Latin America
-                        </a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation buttons */}
-            <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div>
-          </div>
-
-          {/* Ask to Edit Button */}
-         
-        </div>
+    <div className="w-full flex flex-col items-center">
+      {/* Top Label */}
+      <div className="bg-[#774C9E] text-white font-satoshi font-bold text-[18px] uppercase rounded-full px-8 py-2 mb-4">
+        Over 1.5 million
       </div>
+
+      {/* Title */}
+      <h1 className="font-satoshi font-bold text-[65px] leading-[75px] text-[#242424] text-center">
+        All City Guides
+      </h1>
+      
+      {/* Subtitle */}
+      <p className="font-satoshi font-normal text-[18px] leading-[28px] text-[#242424] text-center mb-6">
+        Discover LGBTQ+ Hotspots around the world
+      </p>
+      
+      {/* Swiper Slider */}
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={3}
+        loop={true}
+        centeredSlides={true}
+        autoplay={{ delay: 3000, }}
+        navigation
+        pagination={{ clickable: true }}
+        className="w-full max-w-[1200px]"
+      >
+        {sliderData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-[400px] h-[400px] rounded-[50px] overflow-hidden">
+              <Image src={item.src} alt={item.label} layout="fill" objectFit="cover" className="rounded-[50px]" />
+              <div className="absolute bottom-0 w-full h-[100px] bg-gradient-to-t from-black to-transparent flex justify-center items-center">
+                <span className="text-white font-satoshi font-bold text-[24px] text-center">{item.label}</span>
+              </div>
+              <button className="absolute top-4 right-4 w-[68px] h-[68px] flex justify-center items-center border-[0.91px] border-white rounded-full hover:bg-[#774C9E]">
+                <FaArrowRight className="text-white" />
+              </button>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
