@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,11 +7,11 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const sliderData = [
-  { src: "/register.png", label: "North America" },
-  { src: "/register.png", label: "Europe" },
-  { src: "/register.png", label: "Latin America" },
-  { src: "/register.png", label: "Latin America" },
-  { src: "/register.png", label: "Latin America" },
+  { src: "/places1.png", label: "North America" },
+  { src: "/places2.png", label: "Europe" },
+  { src: "/places3.png", label: "Latin America" },
+  { src: "/places4.png", label: "Latin America" },
+  { src: "/places5.png", label: "Latin America" },
 ];
 
 const PlacesSlider = () => {
@@ -53,7 +52,7 @@ const PlacesSlider = () => {
                 <span className="text-white font-satoshi font-bold text-[24px] text-center">{item.label}</span>
               </div>
               <button className="absolute top-4 right-4 w-[68px] h-[68px] flex justify-center items-center border-[0.91px] border-white rounded-full hover:bg-[#774C9E]">
-                <FaArrowRight className="text-white" />
+                <Image src="icons/arrowup.svg" alt="Arrow Up" width={15.058211806666247} height={17.295851305188936} />
               </button>
             </div>
           </SwiperSlide>

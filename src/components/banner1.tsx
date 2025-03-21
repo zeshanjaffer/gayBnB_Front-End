@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 const Banner = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleLearnMore = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className="mt-[150px] relative w-full max-w-[1238.84px] mx-auto rounded-[50px] flex flex-col md:flex-row overflow-hidden max-h-[572.16px]">
       {/* Image Section */}
@@ -51,11 +61,27 @@ const Banner = () => {
           >
             Become a Host
           </button>
-          <button className="text-[#242424] px-6 py-3 rounded-full border border-[#242424]">
+          <button onClick={handleLearnMore} className="text-[#242424] px-6 py-3 rounded-full border border-[#242424]">
             Learn More
           </button>
         </div>
       </div>
+
+      {/* Fancy Popup */}
+      {showPopup && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-[20px] shadow-lg max-w-md text-center relative">
+            <button onClick={closePopup} className="absolute top-2 right-2 text-gray-600 text-xl">×</button>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Learn More</h2>
+            <p className="text-gray-700 mb-4">
+              Discover more about becoming a host with Gaybnb Travel and making a difference!
+            </p>
+            <button onClick={closePopup} className="bg-[#9642F8] text-white px-6 py-2 rounded-[40px] font-bold shadow-md hover:shadow-lg transition">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

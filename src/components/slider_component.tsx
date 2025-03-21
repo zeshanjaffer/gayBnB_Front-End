@@ -7,12 +7,12 @@ import { Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 const slides = [
-  { id: 1, image: "/register.png", text: "Luxury Apartments" },
-  { id: 2, image: "/register.png", text: "Cozy Cabins" },
-  { id: 3, image: "/register.png", text: "Modern Lofts" },
-  { id: 4, image: "/register.png", text: "Beach Houses" },
-  { id: 5, image: "/register.png", text: "Urban Studios" },
-  { id: 6, image: "/register.png", text: "Countryside Villas" },
+  { id: 1, image: "/places1.png", text: "Luxury Apartments" },
+  { id: 2, image: "/places2.png", text: "Cozy Cabins" },
+  { id: 3, image: "/places3.png", text: "Modern Lofts" },
+  { id: 4, image: "/places4.png", text: "Beach Houses" },
+  { id: 5, image: "/places5.png", text: "Urban Studios" },
+  { id: 6, image: "/places1.png", text: "Countryside Villas" },
 ];
 
 export default function SliderComponent() {
