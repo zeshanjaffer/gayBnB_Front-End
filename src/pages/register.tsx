@@ -3,9 +3,21 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaGoogle, FaTwitter, FaApple } from "react-icons/fa";
 
+import AccountCreatedPopup from "@/components/accountcreatedpopup";
 export default function Register() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleSignUpClick = () => {
+    // Perform your registration logic here
+    setIsPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
-    <div className="mt-[150px]  flex items-center justify-center min-h-screen bg-white p-4">
+    <div className="mt-[150px] flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-[30px] shadow-lg overflow-hidden bg-white">
         {/* Left Side - Image */}
         <div
@@ -35,7 +47,9 @@ export default function Register() {
 
         {/* Right Side - Registration Form */}
         <div className="flex flex-col justify-center px-6 md:px-12 py-8 w-full md:w-1/2">
-          <h2 className="font-bold text-2xl md:text-3xl text-black">Registration to your Account</h2>
+          <h2 className="font-bold text-2xl md:text-3xl text-black">
+            Registration to your Account
+          </h2>
           <p className="text-gray-500 mt-2 text-sm md:text-base text-black">
             Sign in to continue your journey with us.
           </p>
@@ -78,6 +92,7 @@ export default function Register() {
                 background:
                   "radial-gradient(89.6% 68.47% at 0% 0.99%, #B88AE1 0%, #774C9E 100%)",
               }}
+              onClick={handleSignUpClick} // Added onClick handler
             >
               Sign Up
             </motion.button>
@@ -102,6 +117,7 @@ export default function Register() {
           </div>
         </div>
       </div>
+      <AccountCreatedPopup isOpen={isPopupOpen} onClose={handlePopupClose} />
     </div>
   );
 }

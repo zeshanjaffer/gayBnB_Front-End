@@ -17,7 +17,7 @@ const slides = [
 
 export default function SliderComponent() {
   return (
-    <div className="w-[1390px] h-[1124px] bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-10">
+    <div className="mt-[120px] w-full max-w-[1390px] h-auto bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto mt-10">
       {/* Tag */}
       <div className="w-[219px] h-[44px] rounded-[50px] bg-white flex items-center justify-center px-[32px] py-[10px]">
         <span className="text-[18px] font-[700] uppercase leading-[100%] font-[Satoshi]">
@@ -43,7 +43,7 @@ export default function SliderComponent() {
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mt-8 w-[1200px] h-[550px]"
+        className="mt-8 w-full max-w-[1200px] h-[550px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="flex flex-col items-center">

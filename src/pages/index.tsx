@@ -27,81 +27,82 @@ export default function Home() {
 
   return (
     <>
-    <div className="relative h-[828px] mx-auto">
-      {/* Hero Section */}
-      <div
-        className="w-full h-full bg-cover bg-center transition-all duration-500"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        {/* Dynamic Text Based on Selected Page */}
-        <h1
-          className="absolute top-[222px] left-[32px] text-[135px] font-extrabold tracking-wider leading-[124%]"
-          style={{
-            fontFamily: "Nunito Sans",
-            background:
-              "linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 43.44%, rgba(255, 255, 255, 0.14) 70.26%, rgba(249, 215, 205, 0.62) 109.7%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
+      <div className="relative h-[828px] mx-auto max-w-[1440px]"> {/* Add max-w */}
+        {/* Hero Section */}
+        <div
+          className="w-full h-full bg-cover bg-center transition-all duration-500"
+          style={{ backgroundImage: `url(${heroImage})` }}
         >
-          {selectedButton === 0 && "Adventure"}
-          {selectedButton === 1 && "Life is a journey"}
-          {selectedButton === 2 && "Love to travel"}
-        </h1>
-
-        {/* Right Side Buttons */}
-        <div className="absolute top-[395px] right-[50px] flex flex-col gap-4">
-          {/* First Button - Default */}
-          <button
-            onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
-            onMouseLeave={() => setDescription("")}
-            onClick={() => handleImageClick("/heroimage1.jpg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
-            className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 0 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
-            }`}
+          {/* Dynamic Text Based on Selected Page */}
+          <h1
+            className="absolute top-[222px] left-[32px] text-[135px] font-extrabold tracking-wider leading-[124%]"
+            style={{
+              fontFamily: "Nunito Sans",
+              background:
+                "linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 43.44%, rgba(255, 255, 255, 0.14) 70.26%, rgba(249, 215, 205, 0.62) 109.7%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
-            <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full" />
-          </button>
+            {selectedButton === 0 && "Adventure"}
+            {selectedButton === 1 && "Life is a journey"}
+            {selectedButton === 2 && "Love to travel"}
+          </h1>
 
-          {/* Second Button */}
-          <button
-            onMouseEnter={() => setDescription("Discover hidden gems and local secrets.")}
-            onMouseLeave={() => setDescription("")}
-            onClick={() => handleImageClick("/heroimage2.jpg", "Discover hidden gems and local secrets.", 1)}
-            className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 1 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
-            }`}
-          >
-            <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full" />
-          </button>
+          {/* Right Side Buttons */}
+          <div className="absolute top-[395px] right-[50px] flex flex-col gap-4">
+            {/* First Button - Default */}
+            <button
+              onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
+              onMouseLeave={() => setDescription("")}
+              onClick={() => handleImageClick("/heroimage1.jpg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
+              className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
+                selectedButton === 0 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+              }`}
+            >
+              <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full" />
+            </button>
 
-          {/* Third Button */}
-          <button
-            onMouseEnter={() => setDescription("Experience unique adventures and create lasting memories.")}
-            onMouseLeave={() => setDescription("")}
-            onClick={() => handleImageClick("/heroimage3.jpg", "Experience unique adventures and create lasting memories.", 2)}
-            className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-              selectedButton === 2 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
-            }`}
-          >
-            <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full" />
-          </button>
+            {/* Second Button */}
+            <button
+              onMouseEnter={() => setDescription("Discover hidden gems and local secrets.")}
+              onMouseLeave={() => setDescription("")}
+              onClick={() => handleImageClick("/heroimage2.jpg", "Discover hidden gems and local secrets.", 1)}
+              className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
+                selectedButton === 1 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+              }`}
+            >
+              <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full" />
+            </button>
+
+            {/* Third Button */}
+            <button
+              onMouseEnter={() => setDescription("Experience unique adventures and create lasting memories.")}
+              onMouseLeave={() => setDescription("")}
+              onClick={() => handleImageClick("/heroimage3.jpg", "Experience unique adventures and create lasting memories.", 2)}
+              className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
+                selectedButton === 2 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+              }`}
+            >
+              <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full" />
+            </button>
+          </div>
+
+          
         </div>
-
         
       </div>
+      <SearchPortal/>
+      <Inclusivity/>
+      <SliderComponent/>
+      <Banner/>
+      <Banner_2/>
+      <Banner_3/>
+     
+      <PlacesSlider/>
+      <Partners/>
+      <Newsletter/>
       
-    </div>
-    <SearchPortal/>
-    <Inclusivity/>
-    <SliderComponent/>
-    <Banner/>
-    <Banner_2/>
-    <Banner_3/>
-    <Partners/>
-    <PlacesSlider/>
-    <Newsletter/>
-   
     </>
     
   );

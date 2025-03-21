@@ -5,7 +5,7 @@ import React from 'react';
 const Newsletter = () => {
   return (
     <div
-      className="mt-[120px] w-[1241.31px] h-[407.27px] rounded-[50px] bg-cover bg-center flex justify-center items-center relative z-10 -mb-10 " // Added mt-[120px] and z-10
+      className="mt-[50px] w-full max-w-[1241.31px] h-[407.27px] rounded-[50px] bg-cover bg-center flex justify-center items-center relative z-10 -mb-20 mx-auto"
       style={{ backgroundImage: 'url(/heroimage1.jpg)' }}
     >
       <div

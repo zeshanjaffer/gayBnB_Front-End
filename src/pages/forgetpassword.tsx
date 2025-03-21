@@ -1,13 +1,24 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-
+import PasswordChangedPopup from "@/components/PasswordChangedPopupProps";
 export default function ForgetPassword() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleSendResetLink = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-[30px] shadow-lg overflow-hidden bg-white relative">
-        
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2 h-[350px] md:h-auto bg-cover bg-center relative">
           <img
@@ -64,6 +75,7 @@ export default function ForgetPassword() {
                 background:
                   "radial-gradient(89.6% 68.47% at 0% 0.99%, #B88AE1 0%, #774C9E 100%)",
               }}
+              onClick={handleSendResetLink} // Added onClick handler
             >
               Send Reset Link
             </motion.button>
@@ -77,6 +89,7 @@ export default function ForgetPassword() {
           </div>
         </div>
       </div>
+      <PasswordChangedPopup isOpen={isPopupOpen} onClose={closePopup} /> {/* Added the popup component */}
     </div>
   );
 }

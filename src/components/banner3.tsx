@@ -30,9 +30,9 @@ const Banner_3 = () => {
       {/* Right Side Content Section */}
       <div className="w-[610.73px] h-[410.83px] flex flex-col justify-center p-8 bg-white rounded-r-[40px]">
         {/* Travel Buddy Tag */}
-        <span className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[40px] px-[32px] py-[7px] text-sm font-bold self-start mb-2">
-          TRAVEL BUDDY
-        </span>
+        <span className="bg-[radial-gradient(89.6%_68.47%_at_0%_0.99%,_#B88AE1_0%,_#774C9E_100%)] text-white rounded-[40px] px-[32px] py-[7px] text-sm font-bold self-start mb-2">
+  TRAVEL BUDDY
+</span>
 
         {/* Heading */}
         <h2 className="font-satoshi font-bold text-[45px] leading-[55px] text-gray-900 mb-4">
@@ -52,9 +52,9 @@ const Banner_3 = () => {
 
         {/* Buttons */}
         <div className="flex space-x-4">
-          <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-[40px] px-[50px] py-[12px] font-bold text-lg shadow-md hover:shadow-lg transition">
-            Join Now
-          </button>
+        <button className="bg-[radial-gradient(89.6%_68.47%_at_0%_0.99%,_#B88AE1_0%,_#774C9E_100%)] text-white rounded-[40px] px-[50px] py-[12px] font-bold text-lg shadow-md hover:shadow-lg transition">
+  Join Now
+</button>
           <button className="border border-black text-black rounded-[40px] px-[50px] py-[12px] font-bold text-lg hover:bg-gray-100 transition">
             Learn More
           </button>

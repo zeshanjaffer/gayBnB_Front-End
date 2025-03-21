@@ -17,7 +17,7 @@ const sliderData = [
 
 const PlacesSlider = () => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="mt-[120px] w-full flex flex-col items-center">
       {/* Top Label */}
       <div className="bg-[#774C9E] text-white font-satoshi font-bold text-[18px] uppercase rounded-full px-8 py-2 mb-4">
         Over 1.5 million
