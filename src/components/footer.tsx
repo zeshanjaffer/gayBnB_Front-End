@@ -117,9 +117,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Line */}
-      <div
-        className="absolute w-[1240px] top-[412px] left-[100px] border-b border-white opacity-20" // Specified properties
-      ></div>
+  
 
       {/* Copyright and Legal */}
       <div className="flex justify-between w-full px-[100px] mt-8">

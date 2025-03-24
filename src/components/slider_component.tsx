@@ -17,13 +17,14 @@ const slides = [
 
 export default function SliderComponent() {
   return (
-    <div className="mt-[120px] w-full max-w-[1390px] h-auto bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto mt-10">
+    <div className="mt-[120px] w-full h-auto bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto mt-10">
       {/* Tag */}
-      <div className="w-[219px] h-[44px] rounded-[50px] bg-white flex items-center justify-center px-[32px] py-[10px]">
-        <span className="text-[18px] font-[700] uppercase leading-[100%] font-[Satoshi]">
-          Over 1.5 million
-        </span>
-      </div>
+      <div className=" h-[44px] rounded-[50px] flex items-center justify-center px-[32px] py-[10px] bg-[#774C9E]">
+  <span className="text-[18px] font-[700] uppercase  text-white">
+    Over 1.5 million
+  </span>
+</div>
+
 
       {/* Heading */}
       <h1 className="text-white text-[65px] font-[700] leading-[75px] text-center font-[Satoshi] mt-4">
