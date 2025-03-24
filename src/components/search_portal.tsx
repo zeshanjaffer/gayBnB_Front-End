@@ -8,8 +8,8 @@ interface SearchPortalProps {
 const SearchPortal: React.FC<SearchPortalProps> = () => {
   return (
     <div
-      className="w-[1238px] max-w-[90vw] h-[152px] md:h-auto rounded-[24px] shadow-[0_40px_64px_-32px_rgba(15,15,15,0.1)] bg-white p-6 mx-auto absolute" // Added absolute positioning
-      style={{ top: '750px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }} // Adjusted top, added left, transform, and zIndex
+      className="w-[1238px] max-w-[90vw] h-[500px] md:h-[152px] rounded-[24px] shadow-[0_40px_64px_-32px_rgba(15,15,15,0.1)] relative top-[-40px] p-6 mx-auto bg-red-700 " // Added absolute positioning
+      // style={{ top: '750px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }} // Adjusted top, added left, transform, and zIndex
     >
       <div className="flex flex-col md:flex-row items-center md:items-stretch w-full md:w-[1190px] gap-4 md:gap-[103px] mx-auto">
         {/* Location Input */}

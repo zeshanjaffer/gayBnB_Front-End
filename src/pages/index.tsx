@@ -27,10 +27,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative h-[828px] mx-auto max-w-[1440px]"> {/* Add max-w */}
+      <div className="relative h-[828px]  max-w-[1440px]"> {/* Add max-w */}
         {/* Hero Section */}
         <div
-          className="w-full h-full bg-cover bg-center transition-all duration-500"
+          className="w-full h-[250px] md:h-full bg-cover bg-center transition-all duration-500"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           {/* Dynamic Text Based on Selected Page */}
@@ -44,13 +44,13 @@ export default function Home() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            {selectedButton === 0 && "Adventure"}
+            {/* {selectedButton === 0 && "Adventure"}
             {selectedButton === 1 && "Life is a journey"}
-            {selectedButton === 2 && "Love to travel"}
+            {selectedButton === 2 && "Love to travel"} */}
           </h1>
 
           {/* Right Side Buttons */}
-          <div className="absolute top-[395px] right-[50px] flex flex-col gap-4">
+          <div className="absolute top-0 md:top-[395px] right-[50px] flex flex-col gap-4">
             {/* First Button - Default */}
             <button
               onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
@@ -60,7 +60,7 @@ export default function Home() {
                 selectedButton === 0 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
               }`}
             >
-              <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full" />
+              <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full h-full" />
             </button>
 
             {/* Second Button */}
@@ -72,7 +72,7 @@ export default function Home() {
                 selectedButton === 1 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
               }`}
             >
-              <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full" />
+              <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full h-full" />
             </button>
 
             {/* Third Button */}
@@ -84,7 +84,7 @@ export default function Home() {
                 selectedButton === 2 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
               }`}
             >
-              <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full" />
+              <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full h-full" />
             </button>
           </div>
 
@@ -93,15 +93,15 @@ export default function Home() {
         
       </div>
       <SearchPortal/>
-      <Inclusivity/>
-      <SliderComponent/>
+      {/* <Inclusivity/> */}
+      {/* <SliderComponent/>
       <Banner/>
       <Banner_2/>
       <Banner_3/>
      
       <PlacesSlider/>
       <Partners/>
-      <Newsletter/>
+      <Newsletter/> */}
       
     </>
     
