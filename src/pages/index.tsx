@@ -35,7 +35,7 @@ export default function Home() {
         >
           {/* Dynamic Text Based on Selected Page */}
           <h1
-            className="absolute top-[222px] left-[32px] text-[135px] font-extrabold tracking-wider leading-[124%]"
+            className="absolute top-[222px] left-[32px] text-[70px] font-extrabold tracking-wider leading-[124%]"
             style={{
               fontFamily: "Nunito Sans",
               background:

@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <main className="flex-grow ">
             <Component {...pageProps} />
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </>
       )}
     </>
