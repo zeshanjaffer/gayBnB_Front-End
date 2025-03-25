@@ -29,11 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
       ) : (
         // All Other Pages (Show Navbar + Footer)
         <>
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="flex-grow ">
             <Component {...pageProps} />
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </>
       )}
     </>

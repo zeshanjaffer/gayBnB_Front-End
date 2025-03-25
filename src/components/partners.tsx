@@ -18,14 +18,14 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="mt-[50px] bg-white h-[179.55px] flex flex-col items-center justify-center">
+    <section className="my-5 md:mt-[50px] bg-white md:h-[179.55px] flex flex-col items-center justify-center">
       {/* Section Title */}
-      <h2 className="text-[24px] font-[700] font-satoshi leading-[100%] tracking-[0%] text-gray-900 text-center">
+      <h2 className="text-lg md:text-[24px] font-[700] font-satoshi leading-[100%] tracking-[0%] text-gray-900 text-center">
         A Few of Our Fabulous Partners
       </h2>
 
       {/* Partner Logos */}
-      <div className="mt-6 w-full max-w-[1000px]">
+      <div className="mt-6 w-full max-w-[1000px] px-5 md:px-0">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}

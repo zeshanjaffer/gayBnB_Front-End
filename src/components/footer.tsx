@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <footer
-      className="bg-black text-white font-satoshi relative w-full py-12 md:py-20 mx-auto max-w-[1440.21px]"
+      className="bg-black text-white font-satoshi relative w-full py-12 md:py-20 mx-auto"
     >
       <div
         className="flex flex-col md:flex-row justify-center md:justify-around items-center gap-8 md:gap-0"

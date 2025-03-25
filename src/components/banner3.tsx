@@ -11,34 +11,55 @@ const Banner_3 = () => {
   const closePopup = () => {
     setShowPopup(false);
   };
+  const bannerImages = [
+    { id: 1, src: "/banner3.1.png", alt: "Banner Image 1" },
+    { id: 2, src: "/banner3,2.png", alt: "Banner Image 2" },
+    { id: 3, src: "/banner3.3.png", alt: "Banner Image 3" },
+    { id: 4, src: "/banner3.4.png", alt: "Banner Image 4" },
+  ];
+  
 
   return (
-    <div className="mt-[120px] mx-auto w-[1238.73px] h-[421px] flex rounded-[40px]  relative">
+    <div className="my-4 md:my-[120px] mx-auto max-w-[1238.73px] w-full md:h-[421px] flex rounded-[40px] justify-between items-center relative md:flex-row flex-col">
       {/* Left Side Images Section */}
-      <div className="w-[580px] h-full grid grid-cols-2 grid-rows-2 gap-[5px] rounded-l-[40px] overflow-hidden">
-        {/* Image 1 */}
+      {/* <div className="w-[46%] h-full grid grid-cols-2 grid-rows-2 gap-[5px] rounded-l-[40px]">
+       
         <div className="w-[293px] h-[216px] relative">
           <Image src="/banner3.1.png" alt="Banner Image 1" layout="fill" objectFit="cover" className="rounded-[40px]" />
         </div>
 
-        {/* Image 2 */}
+   
         <div className="w-[293px] h-[216px] relative">
           <Image src="/banner3,2.png" alt="Banner Image 2" layout="fill" objectFit="cover" className="rounded-[40px]" />
         </div>
 
-        {/* Image 3 */}
+       
         <div className="w-[222px] h-[186px] relative">
           <Image src="/banner3.3.png" alt="Banner Image 3" layout="fill" objectFit="cover" className="rounded-[40px]" />
         </div>
 
-        {/* Image 4 */}
+      
         <div className="w-[378px] h-[186px] relative">
           <Image src="/banner3.4.png" alt="Banner Image 4" layout="fill" objectFit="cover" className="rounded-[40px]" />
         </div>
-      </div>
+      </div> */}
+      <div className="w-full p-5 md:p-0 md:w-[46%] h-full grid grid-cols-2 grid-rows-2  gap-x-[8px] gap-y-[8px] md:gap-y-10 rounded-l-[40px]">
+  {bannerImages.map((image) => (
+    <div key={image.id} className="w-full h-[165px] md:h-[220px] relative gap-10">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        layout="fill"
+        objectFit="cover"
+        className="rounded-[20px]"
+      />
+    </div>
+  ))}
+</div>
+
 
       {/* Right Side Content Section */}
-      <div className="w-[610.73px] h-[410.83px] flex flex-col justify-center p-8 bg-white rounded-r-[40px]">
+      <div className=" w-full md:w-[52%] md:h-[410.83px] flex flex-col justify-center p-8 bg-white rounded-r-[40px]">
         <span className="bg-[radial-gradient(89.6%_68.47%_at_0%_0.99%,_#B88AE1_0%,_#774C9E_100%)] text-white rounded-[40px] px-[32px] py-[7px] text-sm font-bold self-start mb-2">
           TRAVEL BUDDY
         </span>
@@ -53,10 +74,10 @@ const Banner_3 = () => {
           Read More
         </a>
         <div className="flex space-x-4">
-          <button className="bg-[radial-gradient(89.6%_68.47%_at_0%_0.99%,_#B88AE1_0%,_#774C9E_100%)] text-white rounded-[40px] px-[50px] py-[12px] font-bold text-lg shadow-md hover:shadow-lg transition">
+          <button className="bg-[radial-gradient(89.6%_68.47%_at_0%_0.99%,_#B88AE1_0%,_#774C9E_100%)] text-white rounded-[40px] px-6 md:px-[50px] py-2 md:py-[12px] font-bold text-lg shadow-md hover:shadow-lg transition">
             Join Now
           </button>
-          <button onClick={handleLearnMore} className="border border-black text-black rounded-[40px] px-[50px] py-[12px] font-bold text-lg hover:bg-gray-100 transition">
+          <button onClick={handleLearnMore} className="border border-black text-black rounded-[40px] px-6 md:px-[50px] py-2 md:py-[12px] font-bold text-lg hover:bg-gray-100 transition">
             Learn More
           </button>
         </div>

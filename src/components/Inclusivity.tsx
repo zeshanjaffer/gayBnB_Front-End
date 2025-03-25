@@ -24,7 +24,7 @@ const Inclusivity = () => {
           <div className="w-full lg:w-[610px] flex flex-col gap-6">
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               {/* Card 1 */}
-              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-md">
+              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-xl md:shadow-md">
                 <h3 className="font-satoshi font-bold text-5xl lg:text-[65px] leading-[100%] text-[#774C9E]">
                   350K
                 </h3>
@@ -32,7 +32,7 @@ const Inclusivity = () => {
               </div>
 
               {/* Card 2 */}
-              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-md">
+              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-xl md:shadow-md">
                 <h3 className="font-satoshi font-bold text-5xl lg:text-[65px] leading-[100%] text-[#774C9E]">
                   4000
                 </h3>
@@ -40,7 +40,7 @@ const Inclusivity = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 pb-5 md:pb-0">
               {/* Image */}
               <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] overflow-hidden">
                 <Image
@@ -49,11 +49,12 @@ const Inclusivity = () => {
                   width={295}
                   height={227.68}
                   objectFit="cover"
+                  className="w-full"
                 />
               </div>
 
               {/* Card 3 */}
-              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-md">
+              <div className="w-full sm:w-[295px] h-[227.68px] rounded-[50px] bg-white flex flex-col items-center justify-center shadow-xl md:shadow-md">
                 <h3 className="font-satoshi font-bold text-5xl lg:text-[65px] leading-[100%] text-[#774C9E]">
                   350K
                 </h3>

@@ -27,15 +27,15 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative h-[828px]  max-w-[1440px]"> {/* Add max-w */}
+      <div className="relative md:h-screen w-full mx-auto pt-[86px] md:pt-0"> {/* Add max-w */}
         {/* Hero Section */}
         <div
-          className="w-full h-[250px] md:h-full bg-cover bg-center transition-all duration-500"
+          className="w-full h-[280px] md:h-full bg-cover bg-center transition-all duration-500"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           {/* Dynamic Text Based on Selected Page */}
           <h1
-            className="absolute top-[222px] left-[32px] text-[70px] font-extrabold tracking-wider leading-[124%]"
+            className="absolute top-[175px] md:top-[222px] left-[32px] text-2xl md:text-[70px] font-extrabold tracking-wider leading-[124%]"
             style={{
               fontFamily: "Nunito Sans",
               background:
@@ -50,14 +50,14 @@ export default function Home() {
           </h1>
 
           {/* Right Side Buttons */}
-          <div className="absolute top-0 md:top-[395px] right-[50px] flex flex-col gap-4">
+          <div className="absolute top-[95px] md:top-[308px] right-[20px] md:right-[50px] flex flex-col gap-4">
             {/* First Button - Default */}
             <button
               onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
               onMouseLeave={() => setDescription("")}
               onClick={() => handleImageClick("/heroimage1.jpg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
               className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-                selectedButton === 0 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+                selectedButton === 0 ? "w-[90px] h-[90px] md:w-[124px] md:h-[124px]" : "w-[50px] h-[50px] md:w-[78px] md:h-[78px]"
               }`}
             >
               <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full h-full" />
@@ -69,7 +69,7 @@ export default function Home() {
               onMouseLeave={() => setDescription("")}
               onClick={() => handleImageClick("/heroimage2.jpg", "Discover hidden gems and local secrets.", 1)}
               className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-                selectedButton === 1 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+                selectedButton === 1 ? "w-[90px] h-[90px] md:w-[124px] md:h-[124px]" : "w-[50px] h-[50px] md:w-[78px] md:h-[78px]"
               }`}
             >
               <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full h-full" />
@@ -81,7 +81,7 @@ export default function Home() {
               onMouseLeave={() => setDescription("")}
               onClick={() => handleImageClick("/heroimage3.jpg", "Experience unique adventures and create lasting memories.", 2)}
               className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
-                selectedButton === 2 ? "w-[124px] h-[124px]" : "w-[78px] h-[78px]"
+                selectedButton === 2 ? "w-[90px] h-[90px] md:w-[124px] md:h-[124px]" : "w-[50px] h-[50px] md:w-[78px] md:h-[78px]"
               }`}
             >
               <Image src="/heroimage3.jpg" alt="Destination 3" width={selectedButton === 2 ? 124 : 78} height={selectedButton === 2 ? 124 : 78} className="rounded-full h-full" />
@@ -93,15 +93,17 @@ export default function Home() {
         
       </div>
       <SearchPortal/>
-      {/* <Inclusivity/> */}
-      {/* <SliderComponent/>
-      <Banner/>
+      <Inclusivity/>
+     <SliderComponent/>
+       <Banner/>
       <Banner_2/>
       <Banner_3/>
-     
+      
+      
       <PlacesSlider/>
+      
       <Partners/>
-      <Newsletter/> */}
+      <Newsletter/> 
       
     </>
     

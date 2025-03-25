@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const Banner_2 = () => {
   return (
-    <div className="mt-[100px]  bg-[#F1F8FF] w-full max-w-[1440px] h-[776.07px] relative mx-auto flex items-center justify-between px-10 md:px-20">
+    <div className="md:mt-[100px] mt-5 gap-5 md:gap-0 bg-[#F1F8FF] w-full max-w-[1440px] md:h-[776.07px] relative mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20">
       {/* Left Text Section */}
       <div className="max-w-[550px]">
-        <div className="bg-[#774C9E] text-white px-4 py-2 rounded-full inline-block mb-6">
+        <div className="bg-[#774C9E] text-white px-2 md:px-4 py-2 rounded-full inline-block mb-6">
           <span className="font-satoshi font-bold text-sm uppercase">
             Gayring Travel's LGBTQ+ Hotspots
           </span>
@@ -28,7 +28,7 @@ const Banner_2 = () => {
       </div>
 
       {/* Right Image Section */}
-      <div className="w-[592.47px] h-[592.99px] rounded-[50px] overflow-hidden">
+      <div className="md:w-[592.47px] md:h-[592.99px] rounded-[50px] object-cover w-full md:overflow-hidden">
         <Image
           src="/banner2.png" // Replace with your image path
           alt="Hotspot"

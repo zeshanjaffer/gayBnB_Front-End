@@ -7,8 +7,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-12 left-1/2 transform -translate-x-1/2 z-50 bg-white/30 backdrop-blur-md rounded-2xl w-full shadow-md max-w-[1382px] lg:max-w-[1300px] md:max-w-[1000px]">
-      <div className="flex items-center justify-between px-6 py-4">
+    <nav className="fixed md:top-12 left-1/2 transform -translate-x-1/2 z-50 bg-white/30 backdrop-blur-md rounded-none md:rounded-2xl w-full shadow-md max-w-[1382px] lg:max-w-[1300px] md:max-w-[1000px]">
+      <div className="flex items-center justify-between p-2 md:px-6 md:py-4">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -45,7 +45,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-black md:text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}

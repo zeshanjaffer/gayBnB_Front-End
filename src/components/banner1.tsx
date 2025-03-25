@@ -13,7 +13,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="mt-[150px] relative w-full max-w-[1238.84px] mx-auto rounded-[50px] flex flex-col md:flex-row overflow-hidden max-h-[572.16px]">
+    <div className="mt-[20px] md:mt-[150px] relative w-full max-w-[1238.84px] mx-auto rounded-[50px] flex flex-col md:flex-row overflow-hidden md:max-h-[572.16px]">
       {/* Image Section */}
       <div className="w-full md:w-[576.81px] rounded-l-[50px] overflow-hidden">
         <Image
