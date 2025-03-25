@@ -55,24 +55,24 @@ export default function Home() {
             <button
               onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
               onMouseLeave={() => setDescription("")}
-              onClick={() => handleImageClick("/heroimage1.jpg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
+              onClick={() => handleImageClick("/heroimage1.jpeg", "Find the best destinations, tips, and experiences to make your travels seamless and memorable.", 0)}
               className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
                 selectedButton === 0 ? "w-[90px] h-[90px] md:w-[124px] md:h-[124px]" : "w-[50px] h-[50px] md:w-[78px] md:h-[78px]"
               }`}
             >
-              <Image src="/heroimage1.jpg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full h-full" />
+              <Image src="/heroimage1.jpeg" alt="Destination 1" width={selectedButton === 0 ? 124 : 78} height={selectedButton === 0 ? 124 : 78} className="rounded-full h-full" />
             </button>
 
             {/* Second Button */}
             <button
               onMouseEnter={() => setDescription("Discover hidden gems and local secrets.")}
               onMouseLeave={() => setDescription("")}
-              onClick={() => handleImageClick("/heroimage2.jpg", "Discover hidden gems and local secrets.", 1)}
+              onClick={() => handleImageClick("/heroimage2.jpeg", "Discover hidden gems and local secrets.", 1)}
               className={`border-[1.26px] border-white rounded-full hover:opacity-80 transition-all duration-300 ${
                 selectedButton === 1 ? "w-[90px] h-[90px] md:w-[124px] md:h-[124px]" : "w-[50px] h-[50px] md:w-[78px] md:h-[78px]"
               }`}
             >
-              <Image src="/heroimage2.jpg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full h-full" />
+              <Image src="/heroimage2.jpeg" alt="Destination 2" width={selectedButton === 1 ? 124 : 78} height={selectedButton === 1 ? 124 : 78} className="rounded-full h-full" />
             </button>
 
             {/* Third Button */}
