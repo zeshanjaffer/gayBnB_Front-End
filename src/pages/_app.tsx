@@ -22,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       {isDashboardPage ? (
         // Dashboard Pages → Show Sidebar + Topbar (No Navbar, No Footer)
+        
         <Layout>
           <Component {...pageProps} />
         </Layout>
@@ -32,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <main className="flex-grow ">
             <Component {...pageProps} />
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </>
       )}
     </>

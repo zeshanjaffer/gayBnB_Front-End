@@ -13,7 +13,7 @@ const Banner_3 = () => {
   };
 
   return (
-    <div className="mt-[120px] mx-auto w-[1238.73px] h-[421px] flex rounded-[40px] overflow-hidden relative">
+    <div className="mt-[120px] mx-auto w-[1238.73px] h-[421px] flex rounded-[40px]  relative">
       {/* Left Side Images Section */}
       <div className="w-[580px] h-full grid grid-cols-2 grid-rows-2 gap-[5px] rounded-l-[40px] overflow-hidden">
         {/* Image 1 */}
