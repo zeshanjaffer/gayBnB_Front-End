@@ -44,9 +44,9 @@ export default function Home() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            {/* {selectedButton === 0 && "Adventure"}
+            {selectedButton === 0 && "Adventure"}
             {selectedButton === 1 && "Life is a journey"}
-            {selectedButton === 2 && "Love to travel"} */}
+            {selectedButton === 2 && "Love to travel"}
           </h1>
 
           {/* Right Side Buttons */}
