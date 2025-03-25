@@ -12,7 +12,7 @@ import PlacesSlider from '@/components/places_slider';
 
 export default function Home() {
   // Initial hero image
-  const [heroImage, setHeroImage] = useState<string>("/heroimage1.jpg");
+  const [heroImage, setHeroImage] = useState<string>("/heroimage1.jpeg");
   const [description, setDescription] = useState<string>("");
   const [selectedButton, setSelectedButton] = useState<number>(0); // Initialize with 0 (first button default)
   const [showRings, setShowRings] = useState<boolean>(false); // State to control ring visibility
