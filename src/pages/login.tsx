@@ -18,7 +18,7 @@ export default function Login() {
         {/* Left Side - Image */}
         <div
           className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center relative"
-          style={{ backgroundImage: "url('/loginimage.png')" }}
+          style={{ backgroundImage: "url('/loginimage.jpeg')" }}
         >
           {/* Buttons Positioned Over Image */}
           <div className="absolute top-4 right-4 flex gap-2 md:gap-4">

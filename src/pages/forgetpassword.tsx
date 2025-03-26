@@ -22,7 +22,7 @@ export default function ForgetPassword() {
         {/* Left Side - Image */}
         <div className="w-full md:w-1/2 h-[350px] md:h-auto bg-cover bg-center relative">
           <img
-            src="/register.png"
+            src="/forgetpassword.jpg"
             alt="Forget Password"
             className="object-cover w-full h-full"
           />

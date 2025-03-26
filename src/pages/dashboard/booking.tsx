@@ -18,16 +18,19 @@ const Booking = () => {
   );
 
   return (
-    <div className="p-6">
+    <div className="mt-[50px] p-6"> {/* Added mt-[50px] here */}
       {/* Top Filter Buttons */}
       <div className="flex space-x-4 mb-4">
         {["all", "pending", "confirmed", "past"].map((status) => (
           <button
             key={status}
             onClick={() => setFilter(status)}
-            className={`px-4 py-2 rounded ${
-              filter === status ? "bg-purple-600 text-white" : "bg-gray-200"
-            }`}
+            className={`w-[66px] h-[50px] rounded-[10px] font-medium text-sm flex items-center justify-center
+              ${
+                filter === status
+                  ? "bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white shadow-md"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
           >
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </button>

@@ -22,7 +22,7 @@ export default function Register() {
         {/* Left Side - Image */}
         <div
           className="w-full md:w-1/2 h-[350px] md:h-auto bg-cover bg-center relative"
-          style={{ backgroundImage: "url('/register.png')" }}
+          style={{ backgroundImage: "url('/register.jpeg')" }}
         >
           {/* Buttons Positioned Over Image */}
           <div className="absolute top-4 right-4 flex gap-4">

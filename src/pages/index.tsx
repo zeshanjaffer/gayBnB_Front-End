@@ -44,13 +44,13 @@ export default function Home() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            {selectedButton === 0 && "Adventure"}
-            {selectedButton === 1 && "Life is a journey"}
-            {selectedButton === 2 && "Love to travel"}
+            {selectedButton === 0 && "Hotspot"}
+            {selectedButton === 1 && "Accommodation"}
+            {selectedButton === 2 && "travel Buddy"}
           </h1>
 
           {/* Right Side Buttons */}
-          <div className="absolute top-[95px] md:top-[308px] right-[20px] md:right-[50px] flex flex-col gap-4">
+          <div className="absolute top-[95px] md:top-[200px] right-[20px] md:right-[50px] flex flex-col gap-4">
             {/* First Button - Default */}
             <button
               onMouseEnter={() => setDescription("Find the best destinations, tips, and experiences to make your travels seamless and memorable.")}
