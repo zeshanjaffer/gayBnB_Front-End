@@ -27,3 +27,12 @@ body {
 }
 
 /* If you have any custom styles, add them below */
+.swiper-pagination-bullet {
+  background: #d1d1d1; /* Default inactive color (optional) */
+  opacity: 1; /* Ensure visibility of inactive dots */
+}
+
+.swiper-pagination-bullet-active {
+  background: #774C9E;
+  ; /* Set the active dot color to red */
+}

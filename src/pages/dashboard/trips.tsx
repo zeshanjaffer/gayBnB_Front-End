@@ -2,7 +2,7 @@ import React from "react";
 
 const TripsPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="mt-[50px] flex items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="bg-white shadow-lg rounded-lg w-full max-w-5xl p-6">
         
         {/* Top Section - Filter Buttons (Scrollable on Small Screens) */}

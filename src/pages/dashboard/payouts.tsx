@@ -2,7 +2,7 @@ import React from "react";
 
 const PayoutsPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="mt-[50px] flex items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="bg-white shadow-lg rounded-lg w-full max-w-5xl p-6">
         {/* Top Section - Buttons */}
         <div className="flex justify-start space-x-4 mb-4">

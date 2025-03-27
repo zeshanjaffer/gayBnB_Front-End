@@ -5,7 +5,7 @@ import { MdOutlineEmojiEvents } from "react-icons/md";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
+    <div className="mt-[50px] min-h-screen bg-gray-100 p-6 flex flex-col items-center">
       {/* Stats Section */}
       <div className="flex justify-between w-full max-w-4xl mb-8  top: ">
         <div className="flex items-center space-x-2 bg-white p-4 rounded-lg shadow-md w-1/3">

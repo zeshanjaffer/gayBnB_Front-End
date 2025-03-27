@@ -46,7 +46,7 @@ export default function Home() {
           >
             {selectedButton === 0 && "Hotspot"}
             {selectedButton === 1 && "Accommodation"}
-            {selectedButton === 2 && "travel Buddy"}
+            {selectedButton === 2 && "Travel Buddy"}
           </h1>
 
           {/* Right Side Buttons */}

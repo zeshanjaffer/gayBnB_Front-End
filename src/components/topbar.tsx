@@ -76,10 +76,10 @@ export default function Topbar({ toggleSidebar }: TopbarProps) {
 
           {/* User Profile Image */}
           <Image
-            src="icons/avatar.svg"
+            src="/icons/avatar.svg"
             alt="User"
-            width={40}
-            height={40}
+            width={80}
+            height={80}
             className="rounded-full"
           />
         </div>

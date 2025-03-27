@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { div } from "framer-motion/client";
 
 const sliderData = [
   { src: "/places1.png", label: "North America" },
@@ -41,7 +40,6 @@ const PlacesSlider = () => {
           loop={true}
           centeredSlides={true}
           autoplay={{ delay: 3000 }}
-          navigation
           pagination={{ clickable: true }}
           breakpoints={{
             0: {
@@ -96,6 +94,20 @@ const PlacesSlider = () => {
         </Swiper>
       </div>
 
+      {/* Custom Pagination Styles */}
+      <style jsx global>
+        {`
+          .swiper-pagination-bullet {
+            background: #d1d1d1; /* Default inactive color */
+            opacity: 1;
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #774C9E;
+; /* Active dot color */
+          }
+        `}
+      </style>
     </div>
   );
 };
