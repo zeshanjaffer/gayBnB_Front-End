@@ -26,7 +26,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-/* If you have any custom styles, add them below */
+/* Swiper Pagination Styles */
 .swiper-pagination-bullet {
   background: #d1d1d1; /* Default inactive color (optional) */
   opacity: 1; /* Ensure visibility of inactive dots */
@@ -34,5 +34,91 @@ body {
 
 .swiper-pagination-bullet-active {
   background: #774C9E;
-  ; /* Set the active dot color to red */
+  /* Set the active dot color */
 }
+
+/* --- Breakpoints --- */
+
+/* Extra small devices (phones, less than 640px) - Typically Tailwind's default */
+/* No specific media query needed as these are the base styles */
+
+/* Small devices (phones, 640px and up) - Tailwind's 'sm' */
+@media (min-width: 640px) {
+  /* Add your small screen specific styles here */
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) - Tailwind's 'md' */
+@media (min-width: 768px) {
+  /* Add your medium screen specific styles here */
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) - Tailwind's 'lg' */
+@media (min-width: 1024px) {
+  /* Add your large screen specific styles here */
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) - Tailwind's 'xl' */
+@media (min-width: 1280px) {
+  /* Add your extra large screen specific styles here */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+/* 2XL devices (larger desktops, 1536px and up) - Tailwind's '2xl' */
+@media (min-width: 1536px) {
+  /* Add your 2XL screen specific styles here */
+  .container {
+    max-width: 1536px;
+    margin: 0 auto;
+  }
+}
+
+/* --- iPad Specific Breakpoints (Examples) --- */
+
+/* iPad Portrait (typical width around 768px) - Often covered by 'md' */
+/* You might add specific tweaks if needed */
+@media (min-width: 768px) and (max-width: 833px) and (orientation: portrait) {
+  /* Specific styles for iPads in portrait */
+  /* Example: */
+  /* .some-element { font-size: 1.1rem; } */
+}
+
+/* iPad Landscape (typical width around 1024px) - Often covered by 'lg' */
+/* You might add specific tweaks if needed */
+@media (min-width: 1024px) and (max-width: 1199px) and (orientation: landscape) {
+  /* Specific styles for iPads in landscape */
+  /* Example: */
+  /* .another-element { padding: 20px; } */
+}
+
+/* iPad Mini Portrait (typical width around 768px) - Often covered by 'md' */
+/* Add specific tweaks if the general 'md' styles aren't ideal */
+@media (min-width: 768px) and (max-width: 833px) and (orientation: portrait) {
+  /* Specific styles for iPad Mini in portrait */
+  /* Example: */
+  /* .navigation-links { font-size: 0.95rem; } */
+}
+
+/* iPad Mini Landscape (typical width around 1024px) - Often covered by 'lg' */
+/* Add specific tweaks if the general 'lg' styles aren't ideal */
+@media (min-width: 1024px) and (max-width: 1199px) and (orientation: landscape) {
+  /* Specific styles for iPad Mini in landscape */
+  /* Example: */
+  /* .main-content { margin-left: 220px; } */
+}
+
+/* You can add more specific breakpoints and styles as needed */

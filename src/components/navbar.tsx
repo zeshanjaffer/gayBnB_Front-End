@@ -1,16 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+      if (window.innerWidth >= 768 && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpen]);
 
   return (
-    <nav className="fixed md:top-12 left-1/2 transform -translate-x-1/2 z-50 bg-white/30 backdrop-blur-md rounded-none md:rounded-2xl w-full shadow-md max-w-[1382px] lg:max-w-[1300px] md:max-w-[1000px]">
+    <nav className="fixed top-0 md:top-12 left-0 w-full md:left-1/2 transform md:-translate-x-1/2 z-50 bg-white/30 backdrop-blur-md rounded-none md:rounded-2xl w-full shadow-md max-w-[1382px] lg:max-w-[1300px] md:max-w-[1000px] px-4 md:px-0">
       <div className="flex items-center justify-between p-2 md:px-6 md:py-4">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="flex-shrink-0">
           <Image
             src="/gaybnblogo.svg"
             alt="GayBNB Logo"

@@ -20,7 +20,7 @@ interface ProfileField {
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [showVerification, setShowVerification] = useState(false);
-  const [showPersonalInfo, setShowPersonalInfo] = useState(true); // Default to show personal info
+  const [showPersonalInfo, setShowPersonalInfo] = useState(true);
   const [profileData, setProfileData] = useState<ProfileData>({
     firstName: "John",
     lastName: "Welles",
@@ -45,7 +45,6 @@ const Profile = () => {
   };
 
   const handleSubmit = () => {
-    // Here you would typically send the updated profileData to your backend
     console.log("Profile data submitted:", profileData);
     setIsEditing(false);
   };
@@ -71,17 +70,16 @@ const Profile = () => {
   ];
 
   const verificationButtonStyle = `
-    h-[54px]
-    rounded-[10px]
+    rounded-md
     font-semibold
-    shadow-md
-    hover:shadow-lg
+    shadow-sm
+    hover:shadow-md
     transition
     font-nunito
     text-sm
     capitalize
-    px-[43px]
-    py-[16px]
+    px-4
+    py-2
     border
     border-solid
     bg-transparent
@@ -92,53 +90,54 @@ const Profile = () => {
   `;
 
   return (
-    <div className="mt-12 flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+    <div className="mt-6 md:mt-12 flex justify-center items-center bg-gray-100 px-4 sm:px-6 lg:px-8">
       <div
-        className="bg-white shadow-lg rounded-[23.28px] p-8 w-full max-w-[1057px] h-auto"
-        style={{ gap: "35px" }}
+        className="bg-white shadow-lg rounded-[23.28px] p-6 md:p-8 w-full max-w-[1057px]"
+        style={{ gap: "20px" }}
       >
-        {/* Profile Image & Edit Button (Conditionally Visible) */}
+        {/* Profile Image & Edit Button */}
         {!showVerification && (
-          <div className="relative flex flex-col items-center mb-8">
+          <div className="relative flex flex-col items-center mb-6 md:mb-8">
             <img
               src="/profilepic.png"
               alt="Profile"
-              className="w-[120px] sm:w-[157px] h-[120px] sm:h-[157px] rounded-full object-cover"
+              className="w-24 sm:w-32 h-24 sm:h-32 rounded-full object-cover"
             />
             <button
               onClick={handleEditClick}
-              className="absolute top-0 right-0 bg-purple-500 text-white rounded-full w-[36px] sm:w-[48px] h-[36px] sm:h-[48px] flex items-center justify-center shadow-md cursor-pointer"
+              className="absolute top-0 right-0 bg-purple-500 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shadow-md cursor-pointer"
             >
-              <PencilSquareIcon className="w-6 h-6" />
+              <PencilSquareIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         )}
         {showVerification && (
-          <div className="relative flex flex-col items-center mb-8">
+          <div className="relative flex flex-col items-center mb-6 md:mb-8">
             <img
               src="/profilepic.png"
               alt="Profile"
-              className="w-[120px] sm:w-[157px] h-[120px] sm:h-[157px] rounded-full object-cover"
+              className="w-24 sm:w-32 h-24 sm:h-32 rounded-full object-cover"
             />
-            {/* Edit button is not rendered when showVerification is true */}
           </div>
         )}
 
         {/* Navigation Buttons */}
-        <div className="flex justify-center space-x-4 mb-6">
+        <div className="flex justify-center space-x-2 md:space-x-4 mb-4 md:mb-6">
           <button
             onClick={handlePersonalInfoClick}
-            className={`h-[44.47px] rounded-[10.32px] font-semibold shadow-md hover:shadow-lg transition font-nunito text-sm capitalize px-6 py-3 ${
+            className={`rounded-md font-semibold shadow-sm hover:shadow-md transition font-nunito text-sm capitalize px-4 py-2 ${
               showPersonalInfo ? 'bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white' : 'bg-transparent text-gray-700 hover:text-gray-900'
             }`}
+            style={{ height: '44.471824645996094px' }}
           >
             My Personal Information
           </button>
           <button
             onClick={handleVerificationClick}
-            className={`h-[44.47px] rounded-[10.32px] font-semibold shadow-md hover:shadow-lg transition font-nunito text-sm capitalize px-6 py-3 ${
+            className={`rounded-md font-semibold shadow-sm hover:shadow-md transition font-nunito text-sm capitalize px-4 py-2 ${
               showVerification ? 'bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white' : 'bg-transparent text-gray-700 hover:text-gray-900'
             }`}
+            style={{ height: '44.471824645996094px' }}
           >
             Verification
           </button>
@@ -148,20 +147,20 @@ const Profile = () => {
         {showPersonalInfo && (
           <>
             {/* Data Fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-3 md:gap-y-4">
               {fields.map((field) => (
                 <div key={field.name} className="flex flex-col">
-                  <label className="text-gray-500 text-sm mb-1">{field.label} *</label>
+                  <label className="text-gray-500 text-xs sm:text-sm mb-1">{field.label} *</label>
                   {isEditing ? (
                     <input
                       type="text"
                       name={field.name}
                       value={profileData[field.name]}
                       onChange={handleInputChange}
-                      className="w-full sm:w-[506px] h-[50px] bg-gray-100 rounded-[9.37px] px-4 border border-gray-300 focus:ring-purple-500 focus:border-purple-500"
+                      className="w-full rounded-md px-3 py-2 bg-gray-100 border border-gray-300 focus:ring-purple-500 focus:border-purple-500 text-sm"
                     />
                   ) : (
-                    <div className="w-full sm:w-[506px] h-[50px] bg-gray-100 rounded-[9.37px] flex items-center px-4">
+                    <div className="w-full rounded-md bg-gray-100 flex items-center px-3 py-2 text-sm">
                       {profileData[field.name]}
                     </div>
                   )}
@@ -170,17 +169,17 @@ const Profile = () => {
             </div>
 
             {/* Description */}
-            <div className="mt-6">
-              <label className="text-gray-500 text-sm mb-1">Description *</label>
+            <div className="mt-4 md:mt-6">
+              <label className="text-gray-500 text-xs sm:text-sm mb-1">Description *</label>
               {isEditing ? (
                 <textarea
                   name="description"
                   value={profileData.description}
                   onChange={handleInputChange}
-                  className="w-full bg-gray-100 rounded-[9.37px] p-4 border border-gray-300 focus:ring-purple-500 focus:border-purple-500"
+                  className="w-full rounded-md p-3 bg-gray-100 border border-gray-300 focus:ring-purple-500 focus:border-purple-500 text-sm"
                 />
               ) : (
-                <div className="w-full bg-gray-100 rounded-[9.37px] p-4">
+                <div className="w-full rounded-md p-3 bg-gray-100 text-sm">
                   {profileData.description}
                 </div>
               )}
@@ -188,10 +187,10 @@ const Profile = () => {
 
             {/* Submit Button */}
             {isEditing && (
-              <div className="mt-8 flex justify-end">
+              <div className="mt-6 md:mt-8 flex justify-end">
                 <button
                   onClick={handleSubmit}
-                  className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-lg py-3 px-6 font-semibold shadow-md hover:shadow-lg transition"
+                  className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white rounded-md py-2 px-4 font-semibold shadow-md hover:shadow-lg transition text-sm"
                 >
                   Submit Changes
                 </button>
@@ -204,40 +203,40 @@ const Profile = () => {
         {showVerification && (
           <>
             {/* Verification Content */}
-            <h2 className="text-xl font-semibold text-gray-800 mb-6">Your Current Verifications</h2>
-            <div className="space-y-4">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-4 md:mb-6">Your Current Verifications</h2>
+            <div className="space-y-3 md:space-y-4">
               {/* Google Verification */}
-              <div className="flex items-center justify-between bg-gray-100 rounded-lg p-4">
-                <div className="flex items-center">
-                  <img src="/icons/google_icon.svg" alt="Google" className="w-8 h-8 mr-2" />
-                  <span>Connect your Gaybnb to your Google account for simplicity and ease.</span>
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between bg-gray-100 rounded-md p-4">
+                <div className="flex items-center mb-2 md:mb-0">
+                  <img src="/icons/google_icon.svg" alt="Google" className="w-6 h-6 mr-2" />
+                  <span className="text-sm">Connect your Gaybnb to your Google account for simplicity and ease.</span>
                 </div>
-                <button className={verificationButtonStyle}>
+                <button className={`${verificationButtonStyle} text-xs sm:text-sm`}>
                   Disconnect
                 </button>
               </div>
 
               {/* Add More Verification */}
               <div>
-                <h3 className="font-semibold text-lg mb-2">Add More Verification</h3>
+                <h3 className="font-semibold text-md md:text-lg mb-2">Add More Verification</h3>
                 {/* Phone Verification */}
-                <div className="flex items-center justify-between bg-gray-100 rounded-lg p-4">
-                  <div className="flex items-center">
-                    <img src="/icons/phone_icon.svg" alt="Phone" className="w-8 h-8 mr-2" />
-                    <span>Phone</span>
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between bg-gray-100 rounded-md p-4">
+                  <div className="flex items-center mb-2 md:mb-0">
+                    <img src="/icons/phone_icon.svg" alt="Phone" className="w-6 h-6 mr-2" />
+                    <span className="text-sm">Phone</span>
                   </div>
-                  <button className={verificationButtonStyle}>
+                  <button className={`${verificationButtonStyle} text-xs sm:text-sm`}>
                     Verify Phone
                   </button>
                 </div>
 
                 {/* Email Verification */}
-                <div className="flex items-center justify-between bg-gray-100 rounded-lg p-4 mt-2">
-                  <div className="flex items-center">
-                    <img src="/icons/email_icon.svg" alt="Email" className="w-8 h-8 mr-2" />
-                    <span>Email</span>
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between bg-gray-100 rounded-md p-4 mt-2">
+                  <div className="flex items-center mb-2 md:mb-0">
+                    <img src="/icons/email_icon.svg" alt="Email" className="w-6 h-6 mr-2" />
+                    <span className="text-sm">Email</span>
                   </div>
-                  <button className={verificationButtonStyle}>
+                  <button className={`${verificationButtonStyle} text-xs sm:text-sm`}>
                     Connect
                   </button>
                 </div>

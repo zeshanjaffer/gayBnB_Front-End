@@ -20,10 +20,12 @@ export default function Register() {
     <div className="mt-[150px] flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-5xl flex flex-col md:flex-row rounded-[30px] shadow-lg overflow-hidden bg-white">
         {/* Left Side - Image */}
-        <div
-          className="w-full md:w-1/2 h-[350px] md:h-auto bg-cover bg-center relative"
-          style={{ backgroundImage: "url('/register.jpeg')" }}
-        >
+        <div className="w-full md:w-1/2 h-[350px] md:h-auto relative overflow-hidden">
+          <img
+            src="/register.jpeg"
+            alt="Registration"
+            className="w-full h-full object-cover"
+          />
           {/* Buttons Positioned Over Image */}
           <div className="absolute top-4 right-4 flex gap-4">
             <Link href="/login">

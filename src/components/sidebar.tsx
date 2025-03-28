@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Power } from "lucide-react";
+import { useState, useEffect } from "react"; // Import useState and useEffect
 
 type MenuItem = {
   name: string;
   path: string;
-  icon: string; // Use image paths instead of React components
+  icon: string;
 };
 
 const menuItems: MenuItem[] = [
@@ -32,6 +33,26 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
   const router = useRouter();
+  const [topOffset, setTopOffset] = useState("64px"); // Default to mobile value
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setTopOffset("64px");
+      } else {
+        setTopOffset("130px");
+      }
+    };
+
+    // Set initial value on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -49,28 +70,20 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
         style={{
           width: "300px",
-          height: "710.01171875px",
           left: "1px",
           gap: "8px",
-          top: "153px", // Default for desktop
+          top: topOffset, // Dynamically set top offset
+          bottom: "0",
+          height: "auto",
         }}
       >
-        {/* Responsive Top Adjustment */}
-        <style>
-          {`
-            @media (max-width: 768px) {
-              div[style] { top: 77px !important; } /* Remove top gap in mobile */
-            }
-          `}
-        </style>
-
-        {/* LOGO - Visible only on mobile/tablet */}
-        <div className="md:hidden flex justify-center py-4">
+        {/* LOGO - Visible only on mobile (smaller than md) */}
+        <div className="flex justify-center py-4 md:hidden">
           <Image src="/gaybnblogo.svg" alt="Logo" width={120} height={40} />
         </div>
 
-        {/* Buttons - Only on Mobile & Tablet */}
-        <div className="md:hidden flex flex-col items-center pb-4 gap-4">
+        {/* Buttons - Only on Mobile & Tablet (smaller than md) */}
+        <div className="flex flex-col items-center pb-4 gap-4 px-4 md:hidden">
           <button
             className="w-full h-[53px] rounded-[12.43px] flex items-center justify-center text-purple-700 font-[500] text-[15px] leading-[100%] font-[Nunito Sans]"
             style={{
@@ -93,17 +106,18 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
         </div>
 
         {/* Navigation */}
-        <nav className="mt-8 space-y-2">
+        <nav className="mt-8 space-y-2 px-2 md:px-4">
           {menuItems.map((item) => (
             <Link key={item.name} href={item.path} passHref>
               <div
-                className={`flex items-center w-full h-12 p-4 cursor-pointer transition duration-300
-                  ${router.pathname === item.path
-                    ? "bg-purple-200 text-purple-700 shadow-md"
-                    : "text-gray-600 hover:bg-gray-100"}`}
+                className={`flex items-center w-full h-12 p-4 cursor-pointer transition duration-300 rounded-md
+                  ${
+                    router.pathname === item.path
+                      ? "bg-purple-200 text-purple-700 shadow-md"
+                      : "text-gray-600 hover:bg-gray-100"
+                  }`}
                 onClick={toggleSidebar}
               >
-                {/* Fixed Icon Size */}
                 <Image
                   src={item.icon}
                   alt={item.name}
