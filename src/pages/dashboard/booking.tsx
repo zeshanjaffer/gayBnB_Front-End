@@ -18,14 +18,14 @@ const Booking = () => {
   );
 
   return (
-    <div className="mt-[50px] p-6"> {/* Added mt-[50px] here */}
-      {/* Top Filter Buttons */}
-      <div className="flex space-x-4 mb-4">
+    <div className="mt-[50px] p-4 sm:p-6 lg:p-8"> {/* Responsive padding */}
+      {/* Top Filter Buttons - Responsive layout */}
+      <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-6">
         {["all", "pending", "confirmed", "past"].map((status) => (
           <button
             key={status}
             onClick={() => setFilter(status)}
-            className={`w-[66px] h-[50px] rounded-[10px] font-medium text-sm flex items-center justify-center
+            className={`min-w-[60px] sm:w-[66px] h-[40px] sm:h-[50px] rounded-[10px] font-medium text-xs sm:text-sm flex items-center justify-center px-2
               ${
                 filter === status
                   ? "bg-gradient-to-r from-[#B88AE1] to-[#774C9E] text-white shadow-md"
@@ -37,23 +37,23 @@ const Booking = () => {
         ))}
       </div>
 
-      {/* Booking Table */}
-      <div className="bg-white p-4 shadow rounded-lg">
+      {/* Booking Table - Responsive design */}
+      <div className="bg-white p-3 sm:p-4 shadow rounded-lg overflow-x-auto">
         {filteredBookings.length > 0 ? (
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-gray-100 text-left">
-                <th className="p-3">Booking ID</th>
-                <th className="p-3">Status</th>
-                <th className="p-3">Availability</th>
+                <th className="p-2 sm:p-3 text-xs sm:text-sm md:text-base">Booking ID</th>
+                <th className="p-2 sm:p-3 text-xs sm:text-sm md:text-base">Status</th>
+                <th className="p-2 sm:p-3 text-xs sm:text-sm md:text-base">Availability</th>
               </tr>
             </thead>
             <tbody>
               {filteredBookings.map((booking) => (
                 <tr key={booking.id} className="border-b">
-                  <td className="p-3">ID #{booking.id}</td>
+                  <td className="p-2 sm:p-3 text-xs sm:text-sm md:text-base">ID #{booking.id}</td>
                   <td
-                    className={`p-3 ${
+                    className={`p-2 sm:p-3 text-xs sm:text-sm md:text-base ${
                       booking.status === "confirmed"
                         ? "text-green-600"
                         : booking.status === "pending"
@@ -63,14 +63,14 @@ const Booking = () => {
                   >
                     {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
                   </td>
-                  <td className="p-3">
+                  <td className="p-2 sm:p-3 text-xs sm:text-sm md:text-base">
                     {booking.availability === "accept" ? (
-                      <>
-                        <button className="bg-green-500 text-white px-3 py-1 rounded mr-2">Accept</button>
-                        <button className="bg-red-500 text-white px-3 py-1 rounded">Decline</button>
-                      </>
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        <button className="bg-green-500 text-white px-2 py-1 text-xs sm:text-sm rounded sm:mr-2">Accept</button>
+                        <button className="bg-red-500 text-white px-2 py-1 text-xs sm:text-sm rounded">Decline</button>
+                      </div>
                     ) : (
-                      <span className="text-gray-400">Not Available</span>
+                      <span className="text-gray-400 text-xs sm:text-sm">Not Available</span>
                     )}
                   </td>
                 </tr>
@@ -78,7 +78,7 @@ const Booking = () => {
             </tbody>
           </table>
         ) : (
-          <p className="text-gray-500 text-center">No bookings yet</p>
+          <p className="text-gray-500 text-center text-sm sm:text-base py-4">No bookings found</p>
         )}
       </div>
     </div>

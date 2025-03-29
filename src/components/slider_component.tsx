@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation,Autoplay } from "swiper/modules";
 import Image from "next/image";
 
 const slides = [
@@ -17,7 +17,7 @@ const slides = [
 
 export default function SliderComponent() {
   return (
-    <div className="md:mt-[120px] max-w-[90%] md:max-w-[1241.31px]  w-full h-auto bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto font-Satoshi">
+    <div className="md:mt-[120px] max-w-[90%] md:max-w-[1241.31px] w-full h-auto bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto font-Satoshi">
       {/* Tag */}
       <div className="h-[44px] rounded-[50px] flex items-center justify-center px-[32px] py-[10px] bg-[#774C9E]">
         <span className="text-[18px] font-[700] uppercase text-white">
@@ -36,47 +36,62 @@ export default function SliderComponent() {
       </p>
 
       {/* Swiper */}
-      <Swiper
-        spaceBetween={20}
-        loop={true}
-        pagination={{ clickable: true }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mt-8 w-full max-w-[1200px] h-[550px]"
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 1.2,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id} className="flex flex-col items-center">
-            <div className="relative w-full sm:w-[370px] h-[420px] rounded-[30px] overflow-hidden shadow-lg">
-              <Image
-                src={slide.image}
-                alt={slide.text}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-[30px]"
-              />
-              <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-b from-transparent to-black rounded-b-[30px]" />
-            </div>
-
-            <div className="mt-4 bg-[#ffffff15] text-white text-[20px] font-[700] px-6 py-3 rounded-[20px] w-[80%] text-center">
-              {slide.text}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="mt-8 w-full max-w-[1200px] relative">
+        <Swiper
+          slidesPerView={3}
+          centeredSlides={true}
+          spaceBetween={30}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          navigation={false}
+          modules={[Pagination, Navigation ,Autoplay]}
+          className="h-[550px]"
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2.5,
+              spaceBetween: 25,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              {({ isActive }) => (
+                <div className={`flex flex-col items-center transition-all duration-300 ${isActive ? "scale-110" : "scale-90 opacity-80"}`}>
+                  <div className="relative w-full h-[420px] rounded-[30px] overflow-hidden shadow-lg">
+                    <Image
+                      src={slide.image}
+                      alt={slide.text}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-[30px]"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-b from-transparent to-black rounded-b-[30px]" />
+                  </div>
+                  <div className="mt-4 bg-[#ffffff15] text-white text-[20px] font-[700] px-6 py-3 rounded-[20px] w-[80%] text-center">
+                    {slide.text}
+                  </div>
+                </div>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }
