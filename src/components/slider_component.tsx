@@ -1,21 +1,57 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 import Image from "next/image";
 
-const slides = [
-  { id: 1, image: "/places1.png", text: "LUXURY APARTMENTS" },
-  { id: 2, image: "/places2.png", text: "COZY CABINS" },
-  { id: 3, image: "/places3.png", text: "MODERN LOFTS" },
-  { id: 4, image: "/places4.png", text: "BEACH HOUSES" },
-  { id: 5, image: "/places5.png", text: "URBAN STUDIOS" },
-  { id: 6, image: "/places1.png", text: "COUNTRYSIDE VILLAS" },
-];
+interface Slide {
+  id: number;
+  title: string;
+  image: string;
+}
 
 export default function SliderComponent() {
+  const slides: Slide[] = [
+    {
+      id: 1,
+      title: "LUXURY APARTMENTS",
+      image: "/places1.png"
+    },
+    {
+      id: 2,
+      title: "COZY CABINS",
+      image: "/places2.png"
+    },
+    {
+      id: 3,
+      title: "MODERN LOFTS",
+      image: "/places3.png"
+    },
+    {
+      id: 4,
+      title: "BEACH HOUSES",
+      image: "/places4.png"
+    },
+    {
+      id: 5,
+      title: "URBAN STUDIOS",
+      image: "/places5.png"
+    },
+    {
+      id: 6,
+      title: "COUNTRYSIDE VILLAS",
+      image: "/places1.png"
+    }
+  ];
+
+  const slideWidth = 610;
+  const slideHeight = 515.7296752929688;
+
   return (
     <div className="md:mt-[120px] max-w-[90%] md:max-w-[1241.31px] w-full min-h-[900px] bg-[#242424] rounded-[50px] flex flex-col items-center justify-center px-6 py-10 mx-auto font-Satoshi">
       {/* Tag */}
@@ -35,72 +71,65 @@ export default function SliderComponent() {
         Whether you're venturing to the vibrant streets of San Francisco or exploring the cultural melting pot of Berlin, Gaybnb Travel has you covered. With over 1.5 million beds in our diverse and carefully curated collection, you can choose from an extensive range of accommodations tailored to your unique needs and desires.
       </p>
 
-      {/* Swiper - Increased height container */}
-      <div className="mt-8 w-full max-w-[1200px] relative h-[650px]">
+      {/* Swiper with exact dimensions */}
+      <div className="w-full mt-10" style={{ height: `${slideHeight}px` }}>
         <Swiper
-          slidesPerView={3}
+          effect={'coverflow'}
+          grabCursor={true}
           centeredSlides={true}
+          slidesPerView={'auto'}
           spaceBetween={30}
           loop={true}
           autoplay={{
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true
           }}
-          pagination={{ clickable: true }}
-          navigation={false}
-          modules={[Pagination, Navigation, Autoplay]}
-          className="h-full"
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            640: {
-              slidesPerView: 1, // Ensure only 1 slide on small screens
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2.5,
-              spaceBetween: 25,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1280: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
           }}
+          pagination={{
+            clickable: true,
+            el: '.swiper-pagination',
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+          }}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+          className="swiper-carousel w-full h-full"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
+            <SwiperSlide
+              key={slide.id}
+              style={{ width: `${slideWidth}px`, height: `${slideHeight}px` }}
+              className={`rounded-[20px] overflow-hidden relative flex items-center justify-center transition-all duration-300`}
+            >
               {({ isActive }) => (
-                <div
-                  className={`flex flex-col items-center transition-all duration-300 ${
-                    isActive ? "z-20" : "z-10 md:opacity-50 opacity-100" // No opacity on mobile
-                  }`}
-                >
-                  <div
-                    className={`relative overflow-hidden shadow-lg transition-all duration-300 ${
-                      isActive
-                        ? "w-[610px] h-[515.73px] rounded-[50px]"
-                        : "md:w-[505px] md:h-[426.96px] md:rounded-[41.39px] w-[90%] h-auto rounded-[25px]" // Adjust size for mobile
-                    }`}
-                  >
+                <>
+                  <div className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${
+                    !isActive ? 'opacity-50 rounded-[41.39px]' : 'opacity-100 rounded-[20px]'
+                  }`}>
                     <Image
                       src={slide.image}
-                      alt={slide.text}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-all duration-300"
+                      alt={slide.title}
+                      width={slideWidth}
+                      height={slideHeight}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
                     />
-                    <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-b from-transparent to-black" />
+                    <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black/80 to-transparent"></div>
                   </div>
                   {isActive && (
-                    <div className="mt-6">
-                      <span
-                        className="font-Satoshi font-[700] text-[52.44px] leading-[41.95px] text-transparent uppercase relative md:block hidden" // Hide text on mobile
+                    <div className="absolute bottom-6 text-center w-full">
+                      <h2
+                        className="font-Satoshi font-[700] text-[52.44px] leading-[41.95px] text-transparent uppercase relative"
                         style={{
                           WebkitTextStroke: '1.5px white',
                           backgroundImage: 'linear-gradient(180deg, #FFFFFF -30.97%, rgba(255, 255, 255, 0.15) 76%, rgba(255, 255, 255, 0) 131.33%)',
@@ -108,25 +137,21 @@ export default function SliderComponent() {
                           WebkitBackgroundClip: 'text',
                         }}
                       >
-                        {slide.text}
-                      </span>
-                      <span
-                        className="font-Satoshi font-[700] text-[30px] leading-[30px] text-transparent uppercase relative md:hidden block text-center" // Show smaller text on mobile
-                        style={{
-                          WebkitTextStroke: '1px white',
-                          backgroundImage: 'linear-gradient(180deg, #FFFFFF -30.97%, rgba(255, 255, 255, 0.15) 76%, rgba(255, 255, 255, 0) 131.33%)',
-                          backgroundClip: 'text',
-                          WebkitBackgroundClip: 'text',
-                        }}
-                      >
-                        {slide.text}
-                      </span>
+                        {slide.title}
+                      </h2>
                     </div>
                   )}
-                </div>
+                </>
               )}
             </SwiperSlide>
           ))}
+
+          {/* Navigation buttons */}
+          <div className="swiper-button-next hidden md:flex !text-white after:!text-2xl hover:!opacity-80 transition-opacity"></div>
+          <div className="swiper-button-prev hidden md:flex !text-white after:!text-2xl hover:!opacity-80 transition-opacity"></div>
+
+          {/* Pagination */}
+          <div className="swiper-pagination !bottom-0"></div>
         </Swiper>
       </div>
     </div>

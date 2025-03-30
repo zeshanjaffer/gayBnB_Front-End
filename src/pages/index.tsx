@@ -12,6 +12,7 @@ import PlacesSlider from '@/components/places_slider';
 import Partners from '@/components/partners';
 import Newsletter from '@/components/newsletter';
 
+
 export default function Home() {
   const buttonData = [
     {
@@ -118,6 +119,7 @@ export default function Home() {
       <PlacesSlider />
       <Partners />
       <Newsletter />
+      
     </>
   );
 }
