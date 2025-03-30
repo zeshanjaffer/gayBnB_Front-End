@@ -44,10 +44,16 @@ const Ring: React.FC<RingProps> = ({ isSelected, buttonSize, description }) => {
             <div 
               className="absolute text-white text-sm sm:text-base md:text-lg font-medium whitespace-nowrap"
               style={{
-                left: `-${outerSize * 0.7}px`,
+                fontFamily: 'Nunito Sans',
+                fontWeight: 800,
+                fontSize: '21.3px',
+                lineHeight: '124%',
+                letterSpacing: '0%',
+                left: `-${outerSize * 1.0}px`,
                 top: '50%',
                 transform: 'translateY(-50%)',
                 maxWidth: `${outerSize * 0.6}px`,
+                
                 textShadow: '0 0 4px rgba(0,0,0,0.5)'
               }}
             >
