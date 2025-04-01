@@ -1,11 +1,10 @@
 "use client";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import Image from "next/image";
 
@@ -71,14 +70,14 @@ export default function SliderComponent() {
         Whether you're venturing to the vibrant streets of San Francisco or exploring the cultural melting pot of Berlin, Gaybnb Travel has you covered. With over 1.5 million beds in our diverse and carefully curated collection, you can choose from an extensive range of accommodations tailored to your unique needs and desires.
       </p>
 
-      {/* Swiper with exact dimensions */}
+      {/* Swiper with z-index adjustments */}
       <div className="w-full mt-10" style={{ height: `${slideHeight}px` }}>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
-          spaceBetween={30}
+          spaceBetween={-slideWidth / 2} // Negative space to push inactive slides behind
           loop={true}
           autoplay={{
             delay: 2000,
@@ -98,34 +97,33 @@ export default function SliderComponent() {
             bulletClass: 'swiper-pagination-bullet',
             bulletActiveClass: 'swiper-pagination-bullet-active',
           }}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+          modules={[EffectCoverflow, Pagination, Autoplay]}
           className="swiper-carousel w-full h-full"
         >
           {slides.map((slide) => (
             <SwiperSlide
               key={slide.id}
               style={{ width: `${slideWidth}px`, height: `${slideHeight}px` }}
-              className={`rounded-[20px] overflow-hidden relative flex items-center justify-center transition-all duration-300`}
+              className={`rounded-[50px] overflow-hidden relative flex items-center justify-center transition-all duration-300`}
             >
               {({ isActive }) => (
-                <>
-                  <div className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${
-                    !isActive ? 'opacity-50 rounded-[41.39px]' : 'opacity-100 rounded-[20px]'
-                  }`}>
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={slideWidth}
-                      height={slideHeight}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black/80 to-transparent"></div>
-                  </div>
+                <div
+                  className={`absolute top-0 left-0 w-full h-full transition-all duration-300`}
+                  style={{
+                    opacity: isActive ? 1 : 0.5,
+                    borderRadius: isActive ? '20px' : '41.39px',
+                    zIndex: isActive ? 10 : 5, // Active slide on top, inactive behind
+                  }}
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    width={slideWidth}
+                    height={slideHeight}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black/80 to-transparent"></div>
                   {isActive && (
                     <div className="absolute bottom-6 text-center w-full">
                       <h2
@@ -141,14 +139,10 @@ export default function SliderComponent() {
                       </h2>
                     </div>
                   )}
-                </>
+                </div>
               )}
             </SwiperSlide>
           ))}
-
-          {/* Navigation buttons */}
-          <div className="swiper-button-next hidden md:flex !text-white after:!text-2xl hover:!opacity-80 transition-opacity"></div>
-          <div className="swiper-button-prev hidden md:flex !text-white after:!text-2xl hover:!opacity-80 transition-opacity"></div>
 
           {/* Pagination */}
           <div className="swiper-pagination !bottom-0"></div>
