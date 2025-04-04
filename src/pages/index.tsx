@@ -12,7 +12,6 @@ import PlacesSlider from '@/components/places_slider';
 import Partners from '@/components/partners';
 import Newsletter from '@/components/newsletter';
 
-
 export default function Home() {
   const buttonData = [
     {
@@ -78,28 +77,28 @@ export default function Home() {
           <div className="absolute top-[30%] sm:top-[25%] md:top-[30%] lg:top-[35%] right-[20px] md:right-[30px] lg:right-[50px] flex flex-col gap-3 sm:gap-4">
             {buttonData.map((btn, index) => {
               const isSelected = selectedButton === index;
-              const buttonSize = isSelected ? 124 : 78;
+              const buttonSize = isSelected 
+                ? 'w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] md:w-[110px] md:h-[110px] lg:w-[124px] lg:h-[124px]' 
+                : 'w-[50px] h-[50px] sm:w-[65px] sm:h-[65px] md:w-[70px] md:h-[70px] lg:w-[78px] lg:h-[78px]';
               
               return (
                 <div key={btn.id} className="relative">
                   <button
                     onClick={() => handleButtonClick(index)}
-                    className={`border-[1.26px] border-white rounded-full transition-all duration-300 overflow-hidden ${
-                      isSelected ? 'w-[124px] h-[124px]' : 'w-[78px] h-[78px]'
-                    }`}
+                    className={`border-[1.26px] border-white rounded-full transition-all duration-300 overflow-hidden ${buttonSize}`}
                   >
                     <Image
                       src={btn.image}
                       alt={btn.title}
-                      width={buttonSize}
-                      height={buttonSize}
+                      width={isSelected ? 124 : 78}
+                      height={isSelected ? 124 : 78}
                       className="rounded-full object-cover w-full h-full"
                       priority
                     />
                   </button>
                   <Ring 
                     isSelected={isSelected} 
-                    buttonSize={buttonSize}
+                    buttonSize={isSelected ? 124 : 78}
                     description={isSelected ? btn.description : undefined}
                   />
                 </div>
@@ -119,7 +118,6 @@ export default function Home() {
       <PlacesSlider />
       <Partners />
       <Newsletter />
-      
     </>
   );
 }

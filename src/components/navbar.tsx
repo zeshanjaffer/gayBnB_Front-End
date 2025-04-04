@@ -38,17 +38,17 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/login" className="text-white text-lg font-semibold">
-            Login
+          <Link href="/travel_buddy_page" className="text-white text-lg font-semibold">
+          Travel Buddy
           </Link>
-          <Link href="/register" className="text-white text-lg font-semibold">
-            Register
+          <Link href="/gaybnb_your_property" className="text-white text-lg font-semibold">
+          Gaybnb Your Property
           </Link>
-          <Link href="/forgetpassword" className="text-white text-lg font-semibold">
-            Forget Password
+          <Link href="/gaybnb_stays" className="text-white text-lg font-semibold">
+            Gaybnb Stays
           </Link>
-          <Link href="/dashboard" className="text-white text-lg font-semibold">
-            Dashboard
+          <Link href="/lgbtq_hotspots" className="text-white text-lg font-semibold">
+            LGBTQ Hotspots
           </Link>
         </div>
 
@@ -72,25 +72,32 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-gray-800 text-white flex flex-col items-center space-y-4 py-4">
           <Link
-            href="/login"
+            href="/travel_buddy_page"
             className="text-lg"
             onClick={() => setIsOpen(false)}
           >
-            Login
+            Travel Buddy
           </Link>
           <Link
-            href="/register"
+            href="/gaybnb_your_property"
             className="text-lg"
             onClick={() => setIsOpen(false)}
           >
-            Register
+            Gaybnb Your Property
           </Link>
           <Link
-            href="/dashboard"
+            href="/gaybnb_stays"
             className="text-lg"
             onClick={() => setIsOpen(false)}
           >
-            Dashboard
+            Gaybnb Stays
+          </Link>
+          <Link
+            href="/lgbtq_hotspots"
+            className="text-lg"
+            onClick={() => setIsOpen(false)}
+          >
+             LGBTQ Hotspots
           </Link>
 
           <button className="bg-gradient-to-r from-[#B88AE1] to-[#774C9E] px-6 py-3 rounded-lg font-bold">

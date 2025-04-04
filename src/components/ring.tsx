@@ -7,9 +7,12 @@ interface RingProps {
 }
 
 const Ring: React.FC<RingProps> = ({ isSelected, buttonSize, description }) => {
-  // Calculate ring sizes based on button size
-  const outerSize = buttonSize * 3.3; // 408.307px for 124px button
-  const innerSize = buttonSize * 2.06; // 255.636px for 124px button
+  // Only change: Added mobile detection
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+  
+  // Only change: Adjusted multipliers for mobile
+  const outerSize = buttonSize * (isMobile ? 2.5 : 3.3);
+  const innerSize = buttonSize * (isMobile ? 1.6 : 2.06);
 
   return (
     <>
@@ -39,7 +42,7 @@ const Ring: React.FC<RingProps> = ({ isSelected, buttonSize, description }) => {
             }}
           />
           
-          {/* Description Text */}
+          {/* Description Text - UNCHANGED */}
           {description && (
             <div 
               className="absolute text-white text-sm sm:text-base md:text-lg font-medium whitespace-nowrap"
@@ -53,7 +56,6 @@ const Ring: React.FC<RingProps> = ({ isSelected, buttonSize, description }) => {
                 top: '50%',
                 transform: 'translateY(-50%)',
                 maxWidth: `${outerSize * 0.6}px`,
-                
                 textShadow: '0 0 4px rgba(0,0,0,0.5)'
               }}
             >

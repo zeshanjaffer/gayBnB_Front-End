@@ -29,7 +29,7 @@ const Banner = () => {
       {/* Text Section */}
       <div className="flex-1 p-6 md:p-10 flex flex-col justify-center text-center md:text-left">
         {/* Label */}
-        <div className="bg-[#774C9E] text-white px-4 py-2 rounded-full inline-block mb-4 md:mb-6"style={{ width: '373px' }}>
+        <div className="bg-[#774C9E] text-white px-4 py-2 rounded-full inline-block mb-4 md:mb-6"style={{ width: '344px' }}>
           <span className=" font-satoshi font-bold text-[16px] leading-[100%] uppercase">
             Discover the Power of Inclusivity
           </span>
